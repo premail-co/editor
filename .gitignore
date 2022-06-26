@@ -1,0 +1,12 @@
+# yarn  no zero installs
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+node_modules
+
+#ignore yarn errors
+yarn-error.log
