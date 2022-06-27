@@ -1,0 +1,6 @@
+@import "./day-theme-mixin.scss";
+@import "./variables.scss";
+
+:root {
+  @include day-theme;
+}

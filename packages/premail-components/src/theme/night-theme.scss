@@ -1,0 +1,193 @@
+:global(.night) {
+  /* General */
+  --backdrop-background-color: var(--dark-dark);
+
+  /* Button */
+  --button-background-color: var(--tertiary-main);
+  --button-border-radius: var(--border-radius-common);
+  --button-background-color-disabled: var(--gray-dark);
+  --button-color: var(--tertiary-contrast);
+  --button-color-disabled: var(--aux-gray-3);
+  --button-background-color-hover: var(--tertiary-dark);
+  --button-font-family: var(--font-family-secondary);
+  --button-font-weight: var(--font-weight-bold);
+  --button-box-shadow-color: var(--a11y-box-shadow-color);
+  --button-box-shadow-width: var(--a11y-box-shadow-width);
+  --button-secondary-background-color: var(--gray-lighter);
+  --button-secondary-background-color-hover: var(--gray-main);
+  --button-secondary-color: #000;
+
+  /* Typography */
+  --typography-color: var(--dark-contrast);
+
+  /* Card */
+  --card-background-color: var(--dark-main);
+  --card-border-color: var(--gray-main);
+  --card-shadow-color: rgb(255 255 255 / 35%);
+
+  /* Header Banner */
+  --header-banner-background-color: var(--dark-dark);
+
+  /* Header */
+  --header-background-color: var(--dark-main);
+  --header-color: var(--header-contrast);
+  --header-height-desktop: 65px;
+
+  --header-item-font-weight: var(--font-weight-bold);
+  --header-item-font-family: var(--font-family-main);
+  --header-item-font-size: 16px;
+  --header-item-color: var(--dark-contrast);
+  --header-item-background-color: var(--dark-main);
+  --header-item-background-color-hover: var(--dark-light);
+  --header-item-box-shadow-color: var(--a11y-box-shadow-color);
+  --header-item-height: 65px;
+  --header-item-height-mobile: 54px;
+
+  /* ListFullScreen*/
+  --list-full-screen-color: var(--dark-contrast);
+  --list-full-screen-background-color: var(--dark-darker);
+
+  /* ListFullScreenRow */
+  --list-full-screen-row-color: var(--dark-contrast);
+  --list-full-screen-row-background-color: var(--dark-darker);
+  --list-full-screen-row-background-color-hover: var(--dark-dark);
+  --list-full-screen-row-background-color-active: var(--dark-dark);
+
+  /* Input */
+  --input-background-color: var(--dark-main);
+  --input-background-color-disabled: var(--gray-dark);
+  --input-border-color: var(--aux-gray-3);
+  --input-border-color-focus: var(--a11y-box-shadow-color);
+  --input-box-shadow-width: var(--a11y-box-shadow-width);
+  --input-font-weight: var(--font-weight-medium);
+  --input-font-family: var(--font-family-secondary);
+  --input-color: var(--dark-contrast);
+  --input-calendar-picker-indicator-filter: invert(80%) sepia(0%) saturate(500%)
+    hue-rotate(0deg);
+  --input-calendar-picker-indicator-filter-focus: invert(70%) sepia(50%)
+    saturate(1500%) hue-rotate(10deg);
+  --input-error-color: var(--error-color);
+
+  /* Footer */
+  --footer-background-color: #000;
+  --footer-color: #fff;
+
+  /* FooterRowHeader */
+  --footer-row-header-color: #fff;
+
+  /* FooterRowText */
+  --footer-row-text-color: #fff;
+
+  /* HomePageRows*/
+  --instructions-row-background-color: var(--dark-main);
+  --instructions-row-circle-border-color: var(--tertiary-main);
+  --instructions-row-circle-background-color: var(--dark-main);
+  --instructions-row-circle-font-weight: var(--font-weight-bold);
+  /* Loader */
+  --loader-border-top-color: var(--tertiary-main);
+  --loader-border-color: var(--dark-contrast);
+
+  /* ProtocolsRow */
+
+  --protocol-row-color: var(--dark-contrast);
+  --protocol-row-background-color: var(--dark-dark);
+
+  /* Dealers Row */
+  --dealers-row-color: var(--dark-contrast);
+  --dealers-row-background-color: var(--dark-main);
+
+  /* Manager Row */
+  --manager-row-color: var(--dark-contrast);
+  --manager-row-background-color: var(--dark-dark);
+
+  /* Autocomplete */
+  --autocomplete-pane-font-family: var(--font-family-secondary);
+  --autocomplete-pane-font-size: var(--font-family-secondary);
+  --autocomplete-pane-color: var(--dark-contrast);
+  --autocomplete-pane-background-color: var(--dark-main);
+  --autocomplete-pane-background-color-highlight: var(--dark-light);
+  --autocomplete-pane-font-weight: var(--font-weight-bold);
+  --autocomplete-pane-font-weight-no-match: var(--font-weight-book);
+
+  /* Dashboard Template */
+  --dashboard-template-border-color: var(--gray-main);
+  --dashboard-template-background-color: var(--dark-main);
+
+  /* Dashboard Option */
+  --dashboard-option-col-background-color: var(--dark-main);
+  --dashboard-option-col-item-background-color: var(--dark-main);
+  --dashboard-option-col-item-background-color-active-element: var(
+    --dark-light
+  );
+
+  --dashboard-option-col-item-background-color-hover: var(--dark-light);
+  --dashboard-option-col-item-color: var(--dark-contrast);
+  --dashboard-option-col-item-font-family: var(--font-family-secondary);
+  --dashboard-option-col-item-background-shadow-color: var(--aux-gray-1);
+  --dashboard-option-box-shadow-color: var(--a11y-box-shadow-color);
+  --dashboard-option-box-border-right-color-active-element: var(
+    --tertiary-main
+  );
+
+  /* Pill Button */
+  --pill-button-background-color: var(--dark-main);
+  --pill-button-background-color-hover: var(--dark-light);
+  --pill-button-border-color: var(--gray-main);
+  --pill-button-font-family: var(--font-family-secondary);
+  --pill-button-font-weight: var(--font-weight-bold);
+  --pill-button-color: var(--dark-contrast);
+  --pill-button-box-shadow-color: var(--a11y-box-shadow-color);
+
+  /* IconButton*/
+  --icon-button-color: var(--dark-contrast);
+  --icon-button-color-disabled: var(--gray-light);
+  /* Radio Input */
+  --radio-input-filter-checked: invert(83%) sepia(8%) saturate(6343%)
+    hue-rotate(1deg) brightness(108%) contrast(105%);
+  --radio-input-fitler-unchecked: invert(94%) sepia(69%) saturate(0%)
+    hue-rotate(147deg) brightness(95%) contrast(80%);
+  --radio-input-fitler-disabled: invert(58%) sepia(4%) saturate(306%)
+    hue-rotate(169deg) brightness(91%) contrast(88%);
+  --radio-input-filter-checked-disabled: invert(83%) sepia(8%) saturate(6343%)
+    hue-rotate(1deg) brightness(108%) contrast(105%) opacity(60%);
+  --radio-input-box-shadow-color: var(--aux-gray-1);
+  --radio-input-box-shadow-width: var(--a11y-box-shadow-width);
+  --radio-input-error-color: var(--error-color);
+  --radio-input-font-weight: var(--font-weight-medium);
+  --radio-input-font-family: var(--font-family-secondary);
+  --radio-input-color: var(--dark-contrast);
+  --radio-input-error-color-filter: invert(83%) sepia(57%) saturate(4578%)
+    hue-rotate(311deg) brightness(97%) contrast(91%);
+  /** Blockquote **/
+  --blockquote-background-color: var(--gray-dark);
+  --blockquote-decoration-color: var(--gray-main);
+  --blockquote-decoration-width: 2px;
+
+  /** Markdown Editor **/
+  --markdown-editor-preview-background-color: var(--dark-main);
+  --markdown-editor-preview-border-color: var(--gray-main);
+  --blockquote-preview-border-width: 2px;
+
+  /* Surface */
+  --surface-background-color: var(--dark-main);
+  --surface-shadow-color: rgb(255 255 255 / 35%);
+
+  /* ProgressBar */
+  --progress-bar-item-background-color-disabled: var(--gray-dark);
+  --progress-bar-item-background-color-done: #62c783;
+  --progress-bar-item-background-color-text-done: var(--dark-contrast);
+  --progress-bar-item-color: var(--dark-main);
+
+  /* Skeleton */
+  --skeleton-background-color: rgb(139, 139, 139);
+  --skeleton-background-color-1: rgba(0, 0, 0, 0);
+  --skeleton-background-color-2: rgba(167, 166, 166, 0.2);
+  --skeleton-background-color-3: rgba(207, 206, 206, 0.5);
+
+  /*Accessibility*/
+  --a11y-box-shadow-color: var(--gray-dark);
+  --a11y-box-shadow-radius: var(--border-radius-common);
+
+  --email-font-family: Arial, Helvetica, sans-serif;
+  --email-background-color: rgb(238, 238, 238);
+}

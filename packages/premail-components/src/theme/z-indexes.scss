@@ -1,0 +1,4 @@
+// Z Index hierarchy for non static elements in ui
+$dashboard-template-nav-mobile-z-index: 1;
+// Additional space left for any popping items like dropdowns
+$modal-backdrop-z-index: $dashboard-template-nav-mobile-z-index + 2;
