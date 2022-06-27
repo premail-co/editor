@@ -1,0 +1,5 @@
+@import "./day-theme-mixin.scss";
+
+:global(.day) {
+  @include day-theme;
+}

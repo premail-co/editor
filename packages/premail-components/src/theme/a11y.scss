@@ -1,0 +1,26 @@
+@mixin a11y-oulline {
+  position: relative;
+  z-index: 0;
+  &:focus,
+  &:focus-within {
+    outline: none;
+  }
+  &::before {
+    /* Position the pseudo-element. */
+    content: " ";
+    border-radius: var(--a11y-box-shadow-radius);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    box-shadow: 0 0 0 var(--a11y-box-shadow-width) var(--a11y-box-shadow-color);
+    opacity: 0;
+    transition: opacity 100ms ease-in-out;
+    z-index: -1;
+  }
+  &:focus-within::before {
+    /* Show the pseudo-element on hover. */
+    opacity: 1;
+  }
+}

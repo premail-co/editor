@@ -1,0 +1,53 @@
+:root {
+  /* Palette */
+  --primary-light: #242424;
+  --primary-main: #000000;
+  --primary-dark: #000000;
+  --primary-contrast: #ffffff;
+
+  --secondary-light: #ffc15e;
+  --secondary-main: #fead54;
+  --secondary-dark: #ff8600;
+
+  --tertiary-light: #ffe850;
+  --tertiary-main: #ffde00;
+  --tertiary-dark: #d8bc00;
+  --tertiary-contrast: #22272e;
+
+  --aux-gray-1: #b3b3b3;
+  --aux-gray-2: #707070;
+  --aux-gray-3: #a9a9a9;
+
+  --dark-lighter: #555e6a;
+  --dark-light: #555e6a;
+  --dark-main: #32373e;
+  --dark-dark: #22272e;
+  --dark-darker: #1b1f24;
+  --dark-contrast: #d9d9d9;
+
+  --white-main: #ffffff;
+
+  --gray-lighter: #f8f8f8;
+  --gray-light: #e6e6e6;
+  --gray-main: #cccccc;
+  --gray-dark: #707070;
+  --gray-darker: #2b2b2b;
+
+  /* Fonts */
+  --font-family-main: "PT Sans";
+  --font-family-secondary: "Open Sans";
+  --font-weight-book: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  /*Accessibility*/
+  --a11y-box-shadow-width: 0.1rem;
+
+  /* Warinings */
+  --error-color: #ec7777;
+  --error-color-filter: invert(83%) sepia(57%) saturate(4578%)
+    hue-rotate(311deg) brightness(97%) contrast(91%);
+
+  --border-radius-common: 0px;
+  --border-radius-aux: 4px;
+}
