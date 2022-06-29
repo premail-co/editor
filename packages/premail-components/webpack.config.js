@@ -11,7 +11,10 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        use: "ts-loader",
+        use: {
+          loader: "ts-loader",
+          options: { configFile: "tsconfig.webpack.json" },
+        },
         exclude: /node_modules/,
       },
       {
@@ -53,7 +56,6 @@ module.exports = {
 
           "sass-loader",
         ],
-        include: path.resolve(__dirname, "../"),
       },
       {
         test: /.*theme\.scss$/,
@@ -68,7 +70,6 @@ module.exports = {
 
           "sass-loader",
         ],
-        include: path.resolve(__dirname, "../"),
       },
     ],
   },

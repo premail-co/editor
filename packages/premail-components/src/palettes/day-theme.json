@@ -1,0 +1,85 @@
+{
+  "premailBlack": "#1c2025",
+  "premailWhite": "#ffffff",
+  "premailGreen": [
+    "#c8e9c4",
+    "#adcca9",
+    "#8cac87",
+    "#63895f",
+    "#4e704a",
+    "#3c543a",
+    "#2e3c29",
+    "#283324"
+  ],
+  "premailRed": [
+    "#f8e4e3",
+    "#f1c4c0",
+    "#ea9d94",
+    "#e77e6b",
+    "#e56951",
+    "#be5743",
+    "#954030",
+    "#783326"
+  ],
+  "premailCoral": [
+    "#fceae5",
+    "#f9d7ce",
+    "#f8c0b1",
+    "#f7a089",
+    "#f58d70",
+    "#e77c62",
+    "#bc634b",
+    "#a85546"
+  ],
+  "premailBlue": [
+    "#d2f2f1",
+    "#bee2e1",
+    "#aacdcc",
+    "#91b7b6",
+    "#759a99",
+    "#668989",
+    "#486765",
+    "#354e4c"
+  ],
+  "premailGray": [
+    "#eff1ee",
+    "#e4e6e2",
+    "#c8cac6",
+    "#9ea19c",
+    "#818281",
+    "#676867",
+    "#525451",
+    "#454645"
+  ],
+  "premailYellow": [
+    "#fde3cd",
+    "#fcd6b2",
+    "#fabf87",
+    "#f9b058",
+    "#e49b37",
+    "#c8882c",
+    "#9f6b22",
+    "#774f1a"
+  ],
+  "premailPurple": [
+    "#f5e9f8",
+    "#edddf2",
+    "#cfb9da",
+    "#ae92c1",
+    "#9674ad",
+    "#85629c",
+    "#6b4d7d",
+    "#543b5e"
+  ],
+  "premailOrange": [
+    "#f7cab7",
+    "#f7ae89",
+    "#f6a06c",
+    "#f28653",
+    "#e17841",
+    "#cd6b36",
+    "#a8562a",
+    "#83421f"
+  ],
+  "premailLink": "#1c7ab6"
+}
