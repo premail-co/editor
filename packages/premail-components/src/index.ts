@@ -1,5 +1,1 @@
-const hello = () => {
-  return "hello";
-};
-
-export { hello };
+export * from "./components/Button";
