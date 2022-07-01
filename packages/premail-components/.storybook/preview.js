@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  StaticThemeProvider,
+  StaticThemeContextProvider,
   useStaticThemeContext,
 } from "../src/components/Themeing";
 import { withKnobs, boolean } from "@storybook/addon-knobs";
@@ -35,9 +35,9 @@ export const decorators = [
       return <Story />;
     };
     return (
-      <StaticThemeProvider>
+      <StaticThemeContextProvider>
         <Temp />
-      </StaticThemeProvider>
+      </StaticThemeContextProvider>
     );
   },
   withKnobs,
