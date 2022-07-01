@@ -1,4 +1,7 @@
+@import "./generated-palettes/day-theme.scss";
+
 @mixin day-theme {
+  @include day-theme-palette;
   /* General */
   --backdrop-background-color: #fff;
 
