@@ -1,0 +1,17 @@
+diff --git a/package.json b/package.json
+index 603eff16d3f8c3cc3284ba80570ea3e244864957..6464ebd96119fc7f05a1405ca507541f0dc9928d 100644
+--- a/package.json
++++ b/package.json
+@@ -77,6 +77,11 @@
+                 "default": "./experimental.d.ts"
+             }
+         },
++        "./test-utils": {
++            "types": {
++                "default": "./test-utils/index.d.ts"
++            }
++        },
+         "./package.json": "./package.json"
+     }
+ }
+\ No newline at end of file

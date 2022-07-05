@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.json",
+  "include": ["types.d.ts", "src"],
+  "exclude": [
+    "scripts",
+    "src/**/*.test.tsx",
+    "src/**/*.test.ts",
+    "src/**/*.storybook.tsx",
+    "src/**/*.stories.tsx"
+  ]
+}

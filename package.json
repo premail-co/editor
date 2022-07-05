@@ -1,13 +1,22 @@
 {
   "name": "premail",
   "packageManager": "yarn@3.2.1",
+  "private": true,
   "workspaces": {
     "packages": [
-      "packages/premail-components"
+      "packages/premail-components",
+      "packages/premail-icons",
+      "packages/premail-logger"
     ]
   },
   "devDependencies": {
     "prettier": "^2.7.1",
     "typescript": "^4.7.4"
+  },
+  "scripts": {
+    "generate:vscode-sdk": "yarn dlx @yarnpkg/sdks vscode"
+  },
+  "resolutions": {
+    "@types/react-dom@18.0.5": "patch:@types/react-dom@npm:18.0.5#.yarn/patches/@types-react-dom-npm-18.0.5-acb34f8ae9.patch"
   }
 }
