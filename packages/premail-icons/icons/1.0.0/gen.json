@@ -1,0 +1,204 @@
+{
+  "icons": [
+    {
+      "name": "Bold",
+      "path": "./premail-bold.svg",
+      "info": "Bold text icon for text editors, based on the lora font."
+    },
+    {
+      "name": "Italic",
+      "path": "./premail-italic.svg",
+      "info": "Italic text icon for text editors, based on the PT Serif font."
+    },
+    {
+      "name": "Underline",
+      "path": "./premail-underline.svg",
+      "info": "Underline text icon for text editors, based on the PT Serif font."
+    },
+    {
+      "name": "Move",
+      "path": "./premail-move.svg",
+      "info": "Move icon, indicates that an elemen can be dragged and dropped."
+    },
+    {
+      "name": "Day",
+      "path": "./premail-day.svg",
+      "info": "Day icon, indicates a light theme or that it is day time."
+    },
+    {
+      "name": "Night",
+      "path": "./premail-night.svg",
+      "info": "Night icon, indicates a dark theme or that it is night time."
+    },
+    {
+      "name": "Close",
+      "path": "./premail-close.svg",
+      "info": "Close icon, indicates a dialog can be closed."
+    },
+    {
+      "name": "Chevron",
+      "path": "./premail-chevron.svg",
+      "info": "Chevron icon, indicates when content elements are collapsed and can be toggled open."
+    },
+    {
+      "name": "Strikethrough",
+      "path": "./premail-strikethrough.svg",
+      "info": "Strikethrough text icon for text editors, based on the Lora font."
+    },
+    {
+      "name": "Eye",
+      "path": "./premail-eye.svg",
+      "info": "Eye icon, indicates when content elements can change visibility."
+    },
+    {
+      "name": "Subscript",
+      "path": "./premail-subscript.svg",
+      "info": "Subscript text icon for text editors, based on the Orbitron font."
+    },
+    {
+      "name": "Superscript",
+      "path": "./premail-superscript.svg",
+      "info": "Superscript text icon for text editors, based on the Orbitron font."
+    },
+    {
+      "name": "Align Center",
+      "path": "./premail-align-center.svg",
+      "info": "Align Center text icon for text editors."
+    },
+    {
+      "name": "Align Justify",
+      "path": "./premail-align-justify.svg",
+      "info": "Align Justify text icon for text editors."
+    },
+    {
+      "name": "Align Left",
+      "path": "./premail-align-left.svg",
+      "info": "Align Left text icon for text editors."
+    },
+    {
+      "name": "Align Right",
+      "path": "./premail-align-right.svg",
+      "info": "Align Right text icon for text editors."
+    },
+    {
+      "name": "Emoji Sunglasses",
+      "path": "./premail-emoji-sunglasses.svg",
+      "info": "Sunglasses emoji icon."
+    },
+    {
+      "name": "Emoji Smile",
+      "path": "./premail-emoji-smile.svg",
+      "info": "Smile emoji icon."
+    },
+    {
+      "name": "Emoji Frown",
+      "path": "./premail-emoji-frown.svg",
+      "info": "Frown emoji icon."
+    },
+    {
+      "name": "Emoji Angry",
+      "path": "./premail-emoji-angry.svg",
+      "info": "Angry emoji icon."
+    },
+    {
+      "name": "Emoji Dizzy",
+      "path": "./premail-emoji-dizzy.svg",
+      "info": "Dizzy emoji icon."
+    },
+    {
+      "name": "Emoji Expressionless",
+      "path": "./premail-emoji-expressionless.svg",
+      "info": "Expressionless emoji icon."
+    },
+    {
+      "name": "Emoji Heart Eyes",
+      "path": "./premail-emoji-heart-eyes.svg",
+      "info": "Heart eyes emoji icon."
+    },
+    {
+      "name": "Emoji Kiss",
+      "path": "./premail-emoji-kiss.svg",
+      "info": "Heart eyes emoji icon."
+    },
+    {
+      "name": "Emoji Laughing",
+      "path": "./premail-emoji-laughing.svg",
+      "info": "Laughing emoji icon."
+    },
+    {
+      "name": "Emoji Neutral",
+      "path": "./premail-emoji-neutral.svg",
+      "info": "Neutral emoji icon."
+    },
+    {
+      "name": "Emoji Upside Down",
+      "path": "./premail-emoji-upside-down.svg",
+      "info": "Upside Down emoji icon."
+    },
+    {
+      "name": "Emoji Wink",
+      "path": "./premail-emoji-wink.svg",
+      "info": "Wink emoji icon."
+    },
+    {
+      "name": "Emoji Heart",
+      "path": "./premail-emoji-heart.svg",
+      "info": "Heart emoji icon"
+    },
+    {
+      "name": "Unordered List",
+      "path": "./premail-unordered-list.svg",
+      "info": "Unordered List icon for text editors."
+    },
+    {
+      "name": "Ordered List",
+      "path": "./premail-ordered-list.svg",
+      "info": "Ordered List icon for text editors, uses Orbitron font"
+    },
+    {
+      "name": "Font Color",
+      "path": "./premail-font-color.svg",
+      "info": "Font Color icon for text editors, based on the PT Serif font."
+    },
+    {
+      "name": "Text Highlight Color",
+      "path": "./premail-text-highlight-color.svg",
+      "info": "Text Highlight Color icon for text editors."
+    },
+    {
+      "name": "Pilcrow LTR",
+      "path": "./premail-pilcrow-ltr.svg",
+      "info": "Pilcrow LTR icon for text editors, based on PT Sans font."
+    },
+    {
+      "name": "Pilcrow RTL",
+      "path": "./premail-pilcrow-rtl.svg",
+      "info": "Pilcrow RTL icon for text editors, based on PT Sans font."
+    },
+    {
+      "name": "Pilcrow",
+      "path": "./premail-pilcrow.svg",
+      "info": "Pilcrow for icon text editors, based on PT Sans font."
+    },
+    {
+      "name": "Link",
+      "path": "./premail-link.svg",
+      "info": "Link icon for text editors."
+    },
+    {
+      "name": "Unlink",
+      "path": "./premail-unlink.svg",
+      "info": "Unlink icon for text editors."
+    },
+    {
+      "name": "Undo",
+      "path": "./premail-undo.svg",
+      "info": "Undo icon for text editors."
+    },
+    {
+      "name": "Redo",
+      "path": "./premail-redo.svg",
+      "info": "Redo icon for text editors."
+    }
+  ]
+}
