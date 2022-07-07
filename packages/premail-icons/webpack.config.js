@@ -42,7 +42,6 @@ module.exports = {
     globalObject: "this",
   },
   // Devtool
-  devtool: "none",
   target: "web",
   mode: "production",
   optimization: {
