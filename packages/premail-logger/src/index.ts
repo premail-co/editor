@@ -1,4 +1,4 @@
-import chalk from "chalk";
+import colors from "colors";
 import winston from "winston";
 
 const options: winston.LoggerOptions = {
@@ -13,18 +13,18 @@ const options: winston.LoggerOptions = {
 
       switch (levelUpper) {
         case "INFO":
-          message = chalk.blue(message);
+          message = colors.blue(message);
           break;
 
         case "WARN":
-          message = chalk.yellow(message);
+          message = colors.yellow(message);
           break;
 
         case "ERROR":
-          message = chalk.red(message);
+          message = colors.red(message);
           break;
         case "DEBUG":
-          message = chalk.green(message);
+          message = colors.green(message);
           break;
 
         default:

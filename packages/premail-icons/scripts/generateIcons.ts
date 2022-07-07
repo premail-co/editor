@@ -6,6 +6,7 @@ import path, { resolve } from "path";
 import { pascalCase } from "pascal-case";
 const iconsDir = resolve(__dirname, "../icons");
 import { format } from "prettier";
+import { createServiceLogger } from "@premail/logger";
 
 const argv = yargs(process.argv.slice(2)).options({
   iconVersion: {
@@ -26,23 +27,10 @@ interface IGenFile {
   icons: IGenEntry[];
 }
 
-const getLogger = async () => {
-  const loggerESM = await import("@premail/logger");
-  const logger = loggerESM.createServiceLogger(pjson.name);
-  return logger;
-};
-
+const logger = createServiceLogger(pjson.name);
 const main = async () => {
-  // Unable to static import an esm package without decalring "type": "module" and using experimental/somewhat incomplete
-  // yarn pnp esm loader in yarn 3.2.1 and ts-node which has esm limitations due to the nodejs loader api
-  // https://github.com/yarnpkg/berry/discussions/4044 ts-node and yarn limitations due to nodejs loader api
-  // https://github.com/yarnpkg/berry/issues/4189
-  // https://github.com/yarnpkg/berry/issues/4245 yarn doesn't handle jsons
-  // https://github.com/yarnpkg/berry/blob/20612e82d26ead5928cc27bf482bb8d62dde87d3/packages/yarnpkg-pnp/sources/esm-loader/loaderUtils.ts#L53
-  // yarn doesn't yet implement json import if youre using an esm module package with pnp
-  const logger = await getLogger();
-
   logger.info(`Reading args`);
+
   const args = await argv;
   const resolvedIconsFolder = path.resolve(`${iconsDir}/${args.iconVersion}`);
   const resolvedIconConfigFile = path.resolve(
@@ -313,17 +301,16 @@ const main = async () => {
     throw new Error(`Unexpected gen.json format`);
   }
 };
-getLogger().then((logger) => {
-  main()
-    .then(() => {
-      logger.info(`Success`);
-    })
-    .catch((e) => {
-      logger.error(`Script failed`);
 
-      if (isError(e)) {
-        logger.error(e.message);
-        logger.error(e.stack);
-      }
-    });
-});
+main()
+  .then(() => {
+    logger.info(`Success`);
+  })
+  .catch((e) => {
+    logger.error(`Script failed`);
+
+    if (isError(e)) {
+      logger.error(e.message);
+      logger.error(e.stack);
+    }
+  });

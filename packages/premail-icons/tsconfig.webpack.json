@@ -1,11 +1,12 @@
 {
   "extends": "./tsconfig.json",
-  "include": ["types.d.ts", "src"],
+  "include": ["globals.d.ts", "src"],
   "exclude": [
     "scripts",
     "src/**/*.test.tsx",
     "src/**/*.test.ts",
     "src/**/*.storybook.tsx",
-    "src/**/*.stories.tsx"
+    "src/**/*.stories.tsx",
+    "src/__mocks__"
   ]
 }
