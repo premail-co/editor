@@ -6,7 +6,8 @@
     "packages": [
       "packages/premail-components",
       "packages/premail-icons",
-      "packages/premail-logger"
+      "packages/premail-logger",
+      "packages/premail-state"
     ]
   },
   "devDependencies": {
