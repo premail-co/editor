@@ -1,1 +1,1 @@
-# premail-components
+# @premail/components
