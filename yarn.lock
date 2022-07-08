@@ -2480,6 +2480,37 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@premail/state@workspace:packages/premail-state":
+  version: 0.0.0-use.local
+  resolution: "@premail/state@workspace:packages/premail-state"
+  dependencies:
+    "@premail/logger": "workspace:^"
+    "@types/dotenv": ^8.2.0
+    "@types/jest": ^28.1.4
+    "@types/node": ^18.0.1
+    "@types/react": ^18.0.15
+    "@types/react-dom": 18.0.5
+    dotenv: ^16.0.1
+    dotenv-cli: ^6.0.0
+    jest: ^28.1.2
+    jest-environment-jsdom: ^28.1.2
+    jest-mock-extended: ^2.0.6
+    react: 18.2.0
+    react-dom: 18.2.0
+    rimraf: ^3.0.2
+    setimmediate: ^1.0.5
+    ts-jest: ^28.0.5
+    ts-loader: ^9.3.1
+    ts-node: ^10.8.2
+    typescript: ^4.7.4
+    webpack: ^5.73.0
+    webpack-cli: ^4.10.0
+  peerDependencies:
+    react: 18.2.0
+    react-dom: 18.2.0
+  languageName: unknown
+  linkType: soft
+
 "@prettier/plugin-xml@npm:^2.2.0":
   version: 2.2.0
   resolution: "@prettier/plugin-xml@npm:2.2.0"
@@ -4353,6 +4384,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/dotenv@npm:^8.2.0":
+  version: 8.2.0
+  resolution: "@types/dotenv@npm:8.2.0"
+  dependencies:
+    dotenv: "*"
+  checksum: a1f524da7dc18b09bdb6c2613b9abbbe8ca575621cce4625efc7f98daf2ba07c7dbab622c9bb394507a12c5c515f9cbbbba4aeec17b801c88faeb8e8e656d460
+  languageName: node
+  linkType: hard
+
 "@types/eslint-scope@npm:^3.7.3":
   version: 3.7.4
   resolution: "@types/eslint-scope@npm:3.7.4"
@@ -4673,6 +4713,17 @@ __metadata:
     "@types/scheduler": "*"
     csstype: ^3.0.2
   checksum: 608eb57a383eedc54c79949673e5e8314f6b0c61542bff58721c8c47a18c23e2832e77c656050c2c2c004b62cf25582136c7c56fe1b6263a285c065fae31dbcf
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:^18.0.15":
+  version: 18.0.15
+  resolution: "@types/react@npm:18.0.15"
+  dependencies:
+    "@types/prop-types": "*"
+    "@types/scheduler": "*"
+    csstype: ^3.0.2
+  checksum: e22cc388d1c145aa184787e44dc28db4789976c704cd5db475c170bb76a560eb81def5f346cfe750949bb3d43ad88822b8cbb9f19b1286e3795892a8263e7715
   languageName: node
   linkType: hard
 
@@ -8140,17 +8191,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dotenv@npm:*, dotenv@npm:^16.0.0, dotenv@npm:^16.0.1":
+  version: 16.0.1
+  resolution: "dotenv@npm:16.0.1"
+  checksum: f459ffce07b977b7f15d8cc4ee69cdff77d4dd8c5dc8c85d2d485ee84655352c2415f9dd09d42b5b5985ced3be186130871b34e2f3e2569ebc72fbc2e8096792
+  languageName: node
+  linkType: hard
+
 "dotenv@npm:^10.0.0":
   version: 10.0.0
   resolution: "dotenv@npm:10.0.0"
   checksum: f412c5fe8c24fbe313d302d2500e247ba8a1946492db405a4de4d30dd0eb186a88a43f13c958c5a7de303938949c4231c56994f97d05c4bc1f22478d631b4005
-  languageName: node
-  linkType: hard
-
-"dotenv@npm:^16.0.0, dotenv@npm:^16.0.1":
-  version: 16.0.1
-  resolution: "dotenv@npm:16.0.1"
-  checksum: f459ffce07b977b7f15d8cc4ee69cdff77d4dd8c5dc8c85d2d485ee84655352c2415f9dd09d42b5b5985ced3be186130871b34e2f3e2569ebc72fbc2e8096792
   languageName: node
   linkType: hard
 
@@ -15612,7 +15663,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"setimmediate@npm:^1.0.4":
+"setimmediate@npm:^1.0.4, setimmediate@npm:^1.0.5":
   version: 1.0.5
   resolution: "setimmediate@npm:1.0.5"
   checksum: c9a6f2c5b51a2dabdc0247db9c46460152ffc62ee139f3157440bd48e7c59425093f42719ac1d7931f054f153e2d26cf37dfeb8da17a794a58198a2705e527fd
