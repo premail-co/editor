@@ -1,0 +1,121 @@
+@mixin plainText {
+  text-align: left;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0px;
+  color: var(--typography-color);
+  opacity: 1;
+}
+
+.h1 {
+  text-align: left;
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 52px;
+  letter-spacing: 0px;
+  color: var(--typography-color);
+  opacity: 1;
+}
+
+.h2 {
+  text-align: left;
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 41px;
+  letter-spacing: 0px;
+  color: var(--typography-color);
+  opacity: 1;
+}
+
+.h3 {
+  text-align: left;
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 36px;
+  letter-spacing: 0px;
+  color: var(--typography-color);
+  opacity: 1;
+}
+
+.h4 {
+  text-align: left;
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 31px;
+  letter-spacing: 0px;
+  color: var(--typography-color);
+  opacity: 1;
+}
+
+.h5 {
+  text-align: left;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+  letter-spacing: 0px;
+  color: var(--typography-color);
+  opacity: 1;
+}
+
+.h6 {
+  text-align: left;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0px;
+  color: var(--typography-color);
+  opacity: 1;
+}
+
+.p {
+  @include plainText;
+}
+
+.li {
+  @include plainText;
+
+  // &::before{
+  // content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  // color: var(--typography-color);; /* Change the color */
+  // font-weight: bold; /* If you want it to be bold */
+  // display: inline-block; /* Needed to add space between the bullet and the text */
+  // width: 16px; /* Also needed for space (tweak if needed) */
+  // margin-left: -16px; /* Also needed for space (tweak if needed) */
+  // }
+}
+
+.strike {
+  @include plainText;
+  text-decoration: line-through;
+}
+
+@mixin link {
+  text-align: left;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0px;
+  color: var(--premail-link);
+  opacity: 1;
+}
+
+.link {
+  @include link;
+}
