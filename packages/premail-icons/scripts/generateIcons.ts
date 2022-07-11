@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env -S yarn dlx ts-node
 import yargs from "yargs/yargs";
 import { promises } from "fs";
 import * as pjson from "../package.json";
