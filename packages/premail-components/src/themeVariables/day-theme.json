@@ -84,5 +84,7 @@
   "premailLink": "#1c7ab6",
   "a11yBoxShadowWidth": "1px",
   "a11yBoxShadowColor": "#1c7ab6",
-  "a11yBoxShadowRadius": "3px"
+  "a11yBoxShadowRadius": "3px",
+  "premailShadow": "rgb(0 0 0 / 35%)",
+  "premail-border-radius-common": "0px"
 }

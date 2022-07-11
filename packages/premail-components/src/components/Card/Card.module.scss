@@ -2,7 +2,7 @@
   background: var(--card-background-color) 0% 0% no-repeat border-box;
   opacity: 1;
   padding: 10px 24px 10px 24px;
-  border-radius: 8px;
+  border-radius: var(--card-border-radius);
   box-sizing: border-box;
 }
 .border {
@@ -31,7 +31,7 @@
   box-shadow: var(--card-shadow-color) 0px 4px 10px 0px;
 }
 .elevation-8 {
-  box-shadow: var(--card-shadow-color) 0px 4px 10px 0px;
+  box-shadow: var(--card-shadow-color) 0px 4px 11px 0px;
 }
 .elevation-9 {
   box-shadow: var(--card-shadow-color) 0px 4px 12px 0px;
