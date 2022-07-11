@@ -2393,9 +2393,9 @@ __metadata:
     jest-mock-extended: ^2.0.6
     mini-css-extract-plugin: ^2.6.1
     prettier: ^2.7.1
-    react: ^18.2.0
-    react-dom: ^18.2.0
-    react-test-renderer: ^18.2.0
+    react: 18.2.0
+    react-dom: 18.2.0
+    react-test-renderer: 18.2.0
     rimraf: ^3.0.2
     sass: ^1.53.0
     sass-loader: ^13.0.1
@@ -2409,6 +2409,9 @@ __metadata:
     url-loader: ^4.1.1
     webpack: ^5.73.0
     webpack-cli: ^4.10.0
+  peerDependencies:
+    react: 18.2.0
+    react-dom: 18.2.0
   languageName: unknown
   linkType: soft
 
@@ -14589,7 +14592,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-dom@npm:18.2.0, react-dom@npm:^18.2.0":
+"react-dom@npm:18.2.0":
   version: 18.2.0
   resolution: "react-dom@npm:18.2.0"
   dependencies:
@@ -14727,7 +14730,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-test-renderer@npm:^18.2.0":
+"react-test-renderer@npm:18.2.0":
   version: 18.2.0
   resolution: "react-test-renderer@npm:18.2.0"
   dependencies:
@@ -14755,7 +14758,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:18.2.0, react@npm:^18.2.0":
+"react@npm:18.2.0":
   version: 18.2.0
   resolution: "react@npm:18.2.0"
   dependencies:
