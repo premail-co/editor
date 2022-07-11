@@ -1,4 +1,4 @@
-@import "./generated-palettes/day-theme.scss";
+@import "./generated-theme-variables/day-theme.scss";
 
 @mixin day-theme {
   @include day-theme-palette;
@@ -48,9 +48,10 @@
   --typography-color: var(--premail-black);
 
   /* Card */
-  --card-background-color: var(--white-main);
-  --card-border-color: var(--gray-main);
-  --card-shadow-color: rgb(0 0 0 / 35%);
+  --card-background-color: var(--pramail-white);
+  --card-border-color: var(--premail-gray-3);
+  --card-shadow-color: var(--premail-shadow);
+  --card-border-radius: var(--premail-border-radius-common)
 
   /* Header Banner */
   --header-banner-background-color: #bdb88a;

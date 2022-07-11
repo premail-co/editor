@@ -1,6 +1,6 @@
 # ignore webpack output
 lib
-# ignore generated color palettes
-src/theme/generated-palettes
+# ignore generated theme variables
+src/theme/generated-theme-variables
 # ignore test coverage report
 coverage

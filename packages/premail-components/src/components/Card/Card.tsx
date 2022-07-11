@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./CardShaded.module.scss";
+import styles from "./Card.module.scss";
 import { IOverridable, IStylable } from "../../types";
 import { concatClassNames } from "../util/concatClassNames";
 
@@ -24,7 +24,7 @@ interface ICardProps
   id?: string;
 }
 
-const getElevationClassName = (elevation?: string) => {
+const getCardElevationFromString = (elevation?: string) => {
   switch (elevation) {
     case "elevation-1":
     case "elevation-2":
@@ -46,7 +46,7 @@ const Card = React.forwardRef<
   React.PropsWithChildren<ICardProps>
 >((props, ref) => {
   const elevationClassName = React.useMemo(
-    () => getElevationClassName(props.elevation),
+    () => getCardElevationFromString(props.elevation),
     [props.elevation]
   );
   const bordersClassName = props.border ? styles.border : "";

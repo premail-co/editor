@@ -9,6 +9,7 @@
   "devDependencies": {
     "@babel/core": "^7.18.5",
     "@mdx-js/react": "^1.6.22",
+    "@premail/logger": "workspace:^",
     "@storybook/addon-actions": "^6.5.9",
     "@storybook/addon-docs": "^6.5.9",
     "@storybook/addon-essentials": "^6.5.9",
@@ -41,6 +42,7 @@
     "prettier": "^2.7.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-element-to-jsx-string": "^15.0.0",
     "react-test-renderer": "18.2.0",
     "rimraf": "^3.0.2",
     "sass": "^1.53.0",
@@ -60,7 +62,7 @@
     "test": "jest --collectCoverage",
     "build": "yarn clean && webpack",
     "clean": "rimraf lib",
-    "generate:palettes": "rimraf src/themes/generated-palettes && ts-node ./scripts/generatePalettes.ts",
+    "generate:palettes": "rimraf src/themes/generated-theme-variables && ts-node ./scripts/generateThemeVariables.ts",
     "generate": "yarn generate:palettes",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"

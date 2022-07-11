@@ -14,7 +14,7 @@ import {
   FontColor,
   TextHighlightColor,
 } from "@premail/icons";
-import Card from "../Card/Card";
+import { Card } from "../Card/Card";
 import { ButtonGroup } from "./ButtonGroup";
 
 // This default export determines where you story goes in the story list
@@ -112,6 +112,7 @@ export const Overview = () => {
       </p>
 
       <Card
+        border
         style={{
           padding: "40px",
           display: "flex",
@@ -160,6 +161,7 @@ export const Overview = () => {
         </Typography>
       </p>
       <Card
+        border
         style={{
           padding: "40px",
           display: "flex",
@@ -223,6 +225,7 @@ export const Overview = () => {
         </Typography>
       </p>
       <Card
+        border
         style={{
           padding: "40px",
           display: "flex",
@@ -296,6 +299,7 @@ export const Overview = () => {
         </Typography>
       </p>
       <Card
+        border
         style={{
           padding: "40px",
           display: "flex",
