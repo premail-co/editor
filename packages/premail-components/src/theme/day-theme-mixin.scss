@@ -11,14 +11,38 @@
   --button-background-color-disabled: var(--gray-main);
   --button-color: var(--primary-contrast);
   --button-color-disabled: var(--gray-dark);
-  --button-background-color-hover: var(--primary-light);
+  --button-background-color-hover: var(--premail-gray-7);
   --button-font-family: var(--font-family-secondary);
   --button-font-weight: var(--font-weight-bold);
-  --button-box-shadow-color: var(--a11y-box-shadow-color);
-  --button-box-shadow-width: var(--a11y-box-shadow-width);
-  --button-secondary-background-color: var(--gray-light);
-  --button-secondary-background-color-hover: var(--gray-main);
-  --button-secondary-color: #000;
+
+  --button-secondary-background-color: var(--premail-gray-0);
+  --button-secondary-background-color-hover: var(--premail-gray-1);
+  --button-secondary-border: none;
+  --button-secondary-color: var(--premail-black);
+
+  --button-outlined-background-color: transparent;
+  --button-outlined-background-color-hover: transparent;
+  --button-outlined-border: 1px solid var(--premail-blue-6);
+  --button-outlined-color: var(--premail-blue-6);
+
+  --button-text-background-color: transparent;
+  --button-text-background-color-hover: var(--premail-gray-1);
+  --button-text-border: none;
+  --button-text-color: var(--premail-black);
+  --button-text-font-weight: 400;
+
+  --button-danger-background-color: transparent;
+  --button-danger-background-color-hover: transparent;
+  --button-danger-border: 1px solid var(--premail-red-5);
+  --button-danger-color: var(--premail-red-5);
+
+  --button-warning-background-color: transparent;
+  --button-warning-background-color-hover: transparent;
+  --button-warning-border: 1px solid var(--premail-yellow-5);
+  --button-warning-color: var(--premail-yellow-5);
+
+  --button-group-border-inline-end: 1px solid var(--premail-gray-2);
+  --button-group-border: 1px solid var(--premail-gray-2);
 
   /* Typography */
   --typography-color: var(--premail-black);
@@ -185,10 +209,6 @@
   --skeleton-background-color-1: rgba(0, 0, 0, 0);
   --skeleton-background-color-2: rgba(204, 203, 203, 0.2);
   --skeleton-background-color-3: rgba(255, 255, 255, 0.5);
-
-  /*Accessibility*/
-  --a11y-box-shadow-color: var(--gray-dark);
-  --a11y-box-shadow-radius: var(--border-radius-common);
 
   /*Email template variables*/
   --email-font-family: Arial, Helvetica, sans-serif;

@@ -1,0 +1,12 @@
+.root {
+  display: inline-block;
+  box-sizing: border-box;
+  white-space: nowrap;
+  :not(:last-child) {
+    border-inline-end: var(--button-group-border-inline-end);
+  }
+}
+
+.outline {
+  border: var(--button-group-border);
+}
