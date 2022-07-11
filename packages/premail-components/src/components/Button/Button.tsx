@@ -36,29 +36,64 @@ const getHTMLButtonProps = (
   return HTMLButtonProps;
 };
 
+const getStylesFromVariant = (variant?: string) => {
+  switch (variant) {
+    case "primary":
+    case "secondary":
+    case "plain":
+    case "outlined":
+    case "danger":
+    case "warning":
+      return styles[variant];
+    default:
+      return styles["primary"];
+  }
+};
+const getStylesFromSize = (size?: string) => {
+  switch (size) {
+    case "small":
+    case "medium":
+    case "large":
+      return styles[size];
+    default:
+      return styles["medium"];
+  }
+};
+const getStylesFromIconPosition = (
+  position?: IButtonProps["iconPosition"],
+  icon?: IButtonProps["icon"]
+) => {
+  if (icon != null && position != null) {
+    if (position == "begin") {
+      return styles.iconBeginPadding;
+    } else {
+      return styles.iconEndPadding;
+    }
+  } else if (icon != null && position == null) {
+    return styles.iconBeginPadding;
+  } else {
+    return "";
+  }
+};
+
 const Button = React.forwardRef<
   HTMLButtonElement,
   React.PropsWithChildren<IButtonProps>
 >((props, ref) => {
   const overrideClass = props.override ?? "";
-  const variant = props.variant ?? "primary";
-  const variantClass = styles[variant] ?? styles.primary;
-  const size = props.size ?? "medium";
-  const sizeClass = styles[size] ?? styles.medium;
+  const variantClass = React.useMemo(
+    () => getStylesFromVariant(props.variant),
+    [props.variant]
+  );
+  const sizeClass = React.useMemo(
+    () => getStylesFromSize(props.size),
+    [props.size]
+  );
 
-  const iconPosition =
-    props.icon != null && props.iconPosition != null
-      ? props.iconPosition
-      : props.icon != null && props.iconPosition == null
-      ? "begin"
-      : null;
-
-  const contentPaddingClass =
-    iconPosition == "begin"
-      ? styles.iconBeginPadding
-      : iconPosition == "end"
-      ? styles.iconEndPadding
-      : "";
+  const contentPaddingClass = React.useMemo(
+    () => getStylesFromIconPosition(props.iconPosition, props.icon),
+    [props.iconPosition, props.icon]
+  );
 
   const Icon = React.useMemo(() => {
     return props.icon ? <props.icon className={styles.icon} /> : null;
@@ -72,11 +107,11 @@ const Button = React.forwardRef<
 
   return (
     <button className={className} ref={ref} {...HTMLButtonProps}>
-      {Icon && iconPosition == "begin" ? Icon : ""}
+      {Icon && props.iconPosition != "end" ? Icon : ""}
       {props.children && (
         <span className={contentPaddingClass}>{props.children}</span>
       )}
-      {Icon && iconPosition == "end" ? Icon : ""}
+      {Icon && props.iconPosition == "end" ? Icon : ""}
     </button>
   );
 });

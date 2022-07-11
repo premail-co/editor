@@ -81,5 +81,8 @@
     "#a8562a",
     "#83421f"
   ],
-  "premailLink": "#1c7ab6"
+  "premailLink": "#1c7ab6",
+  "a11yBoxShadowWidth": "1px",
+  "a11yBoxShadowColor": "#1c7ab6",
+  "a11yBoxShadowRadius": "3px"
 }

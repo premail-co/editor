@@ -93,8 +93,9 @@ export const Overview = () => {
 
       <p>
         <Typography variant={TypographyVariant_ENUM.p}>
-          To begin using the <InlineCode>Button</InlineCode> and
-          <InlineCode>ButtonGoroup</InlineCode> components import the following:
+          To begin using the <InlineCode>Button</InlineCode> and &nbsp;
+          <InlineCode>ButtonGroup</InlineCode>&nbsp; components import the
+          following:
         </Typography>
       </p>
       <CodeBlock>{`import { Button, ButtonGroup } from "@premail/components";`}</CodeBlock>

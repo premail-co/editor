@@ -14,13 +14,6 @@
   --button-background-color-hover: var(--premail-gray-7);
   --button-font-family: var(--font-family-secondary);
   --button-font-weight: var(--font-weight-bold);
-  --button-box-shadow-color: var(--a11y-box-shadow-color);
-  --button-box-shadow-width: var(--a11y-box-shadow-width);
-
-  // --button-secondary-background-color: var(--premail-white);
-  // --button-secondary-background-color-hover: var(--premail-gray-0);
-  // --button-secondary-border: 1px solid var(--premail-gray-3);
-  // --button-secondary-color: var(--premail-black);
 
   --button-secondary-background-color: var(--premail-gray-0);
   --button-secondary-background-color-hover: var(--premail-gray-1);
@@ -216,10 +209,6 @@
   --skeleton-background-color-1: rgba(0, 0, 0, 0);
   --skeleton-background-color-2: rgba(204, 203, 203, 0.2);
   --skeleton-background-color-3: rgba(255, 255, 255, 0.5);
-
-  /*Accessibility*/
-  --a11y-box-shadow-color: var(--premail-link);
-  --a11y-box-shadow-radius: 3px;
 
   /*Email template variables*/
   --email-font-family: Arial, Helvetica, sans-serif;
