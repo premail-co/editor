@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "./Button";
-import { Typography, TypographyVariant_ENUM } from "../Typography";
+import { Typography } from "../Typography";
 import {
   Chevron,
   Undo,
@@ -65,52 +65,43 @@ const InlineCode = (props: React.PropsWithChildren<{}>) => {
 export const Overview = () => {
   return (
     <div style={{ maxWidth: 900, margin: "auto", padding: "0px 5px" }}>
-      <h1>
-        <Typography variant={TypographyVariant_ENUM.h1}>Button</Typography>
-      </h1>
+      <Typography variant={"h1"} renderElement={"h1"}>
+        Button
+      </Typography>
+      <Typography variant={"p1"} renderElement={"p"}>
+        Buttons are interactive elements activated with mouse, keyboard, finger,
+        voice commands or assistive technologies.{" "}
+        <InlineCode>@premail/components</InlineCode>
+        buttons come in 5 variants: &nbsp;
+        <InlineCode>primary</InlineCode>
+        ,&nbsp;
+        <InlineCode>secondary</InlineCode>
+        ,&nbsp;
+        <InlineCode>outlined</InlineCode>
+        ,&nbsp;
+        <InlineCode>danger</InlineCode>
+        &nbsp; and &nbsp;
+        <InlineCode>warning</InlineCode>
+      </Typography>
 
-      <p>
-        <Typography variant={TypographyVariant_ENUM.p}>
-          Buttons are interactive elements activated with mouse, keyboard,
-          finger, voice commands or assistive technologies.{" "}
-          <InlineCode>@premail/components</InlineCode>
-          buttons come in 5 variants: &nbsp;
-          <InlineCode>primary</InlineCode>
-          ,&nbsp;
-          <InlineCode>secondary</InlineCode>
-          ,&nbsp;
-          <InlineCode>outlined</InlineCode>
-          ,&nbsp;
-          <InlineCode>danger</InlineCode>
-          &nbsp; and &nbsp;
-          <InlineCode>warning</InlineCode>
-        </Typography>
-      </p>
+      <Typography variant={"h2"} renderElement="h2">
+        Usage
+      </Typography>
 
-      <h2>
-        <Typography variant={TypographyVariant_ENUM.h3}>Usage</Typography>
-      </h2>
-
-      <p>
-        <Typography variant={TypographyVariant_ENUM.p}>
-          To begin using the <InlineCode>Button</InlineCode> and &nbsp;
-          <InlineCode>ButtonGroup</InlineCode>&nbsp; components import the
-          following:
-        </Typography>
-      </p>
+      <Typography variant={"p1"} renderElement={"p"}>
+        To begin using the <InlineCode>Button</InlineCode> and &nbsp;
+        <InlineCode>ButtonGroup</InlineCode>&nbsp; components import the
+        following:
+      </Typography>
       <CodeBlock>{`import { Button, ButtonGroup } from "@premail/components";`}</CodeBlock>
 
-      <h2>
-        <Typography variant={TypographyVariant_ENUM.h3}>
-          Basic button
-        </Typography>
-      </h2>
-      <p>
-        <Typography variant={TypographyVariant_ENUM.p}>
-          We can make basic buttons with in all variant types
-        </Typography>
-      </p>
+      <Typography variant={"h2"} renderElement="h2">
+        Basic button
+      </Typography>
 
+      <Typography variant={"p1"} renderElement={"p"}>
+        We can make basic buttons with in all variant types
+      </Typography>
       <Card
         border
         style={{
@@ -131,7 +122,6 @@ export const Overview = () => {
           Disabled
         </Button>
       </Card>
-
       <CodeBlock>
         {`<Card
   style={{
@@ -149,17 +139,16 @@ export const Overview = () => {
   <Button variant="danger">Danger button</Button>
 </Card>`}
       </CodeBlock>
-      <h2>
-        <Typography variant={TypographyVariant_ENUM.h3}>
-          Icon Buttons
-        </Typography>
-      </h2>
-      <p>
-        <Typography variant={TypographyVariant_ENUM.p}>
-          Buttons can also represent their behaviour with an icon or enhance the
-          message with visual cue.
-        </Typography>
-      </p>
+
+      <Typography variant={"h2"} renderElement="h2">
+        Icon Buttons
+      </Typography>
+
+      <Typography variant={"p1"} renderElement="p">
+        Buttons can also represent their behaviour with an icon or enhance the
+        message with visual cue.
+      </Typography>
+
       <Card
         border
         style={{
@@ -208,13 +197,10 @@ export const Overview = () => {
 </Card>`}
       </CodeBlock>
       <h2>
-        <Typography variant={TypographyVariant_ENUM.h3}>
-          Button group
-        </Typography>
+        <Typography variant={"h3"}>Button group</Typography>
       </h2>
-
       <p>
-        <Typography variant={TypographyVariant_ENUM.p}>
+        <Typography variant={"p1"}>
           Button groups can bring together buttons with related behaviour, like
           buttons in a text editor toolbar. The{" "}
           <InlineCode>ButtonGroup</InlineCode> component will render an inline
@@ -284,13 +270,10 @@ export const Overview = () => {
   </ButtonGroup>
 </Card>`}</CodeBlock>
       <h2>
-        <Typography variant={TypographyVariant_ENUM.h3}>
-          Button sizes
-        </Typography>
+        <Typography variant={"h3"}>Button sizes</Typography>
       </h2>
-
       <p>
-        <Typography variant={TypographyVariant_ENUM.p}>
+        <Typography variant={"p1"}>
           Buttons can be rendered at different sizes with the{" "}
           <InlineCode>size</InlineCode> prop, it can take the values:
           <InlineCode>small</InlineCode>, <InlineCode>medium</InlineCode>,{" "}
@@ -333,7 +316,6 @@ export const Overview = () => {
           </Button>
         </div>
       </Card>
-
       <CodeBlock>{`<Card
   style={{
     padding: "40px",
@@ -368,7 +350,6 @@ export const Overview = () => {
     </Button>
   </div>
 </Card>`}</CodeBlock>
-      <br />
     </div>
   );
 };

@@ -49,7 +49,7 @@
 
   /* Card */
   --card-background-color: var(--pramail-white);
-  --card-border-color: var(--premail-gray-3);
+  --card-border-color: var(--premail-gray-1);
   --card-shadow-color: var(--premail-shadow);
   --card-border-radius: var(--premail-border-radius-common)
 
@@ -83,12 +83,13 @@
   /* Input */
   --input-background-color: white;
   --input-background-color-disabled: var(--gray-main);
-  --input-border-color: var(--gray-main);
-  --input-border-color-focus: var(--a11y-box-shadow-color);
+  --input-border: 1px solid var(--premail-gray-1);
+  --input-border-focus: 1px solid var(--a11y-box-shadow-color);
+  --input-border-radius: 0px;
   --input-box-shadow-width: var(--a11y-box-shadow-width);
   --input-font-weight: var(--font-weight-medium);
   --input-font-family: var(--font-family-secondary);
-  --input-color: #000;
+  --input-color: var(--premail-gray-6);
   --input-calendar-picker-indicator-filter: invert(0%);
   --input-calendar-picker-indicator-filter-focus: invert(10%) sepia(30%)
     saturate(7000%) hue-rotate(215deg);

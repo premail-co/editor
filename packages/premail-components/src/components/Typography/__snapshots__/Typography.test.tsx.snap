@@ -1,17 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Typography tests Should Match H1 Snapshots 1`] = `"<span class=\\"h1\\">Typography H1 Variant</span>"`;
+exports[`Typography tests Should Match H1 Snapshots 1`] = `"<span class=\\"root h1\\">Typography H1 Variant</span>"`;
 
-exports[`Typography tests Should Match H3 snapshots 1`] = `"<span class=\\"h3\\">Typography H3 Variant</span>"`;
+exports[`Typography tests Should Match H3 snapshots 1`] = `"<span class=\\"root h3\\">Typography H3 Variant</span>"`;
 
-exports[`Typography tests Should Match H4 snapshots 1`] = `"<span class=\\"h4\\">Typography H4 Variant</span>"`;
+exports[`Typography tests Should Match H4 snapshots 1`] = `"<span class=\\"root h4\\">Typography H4 Variant</span>"`;
 
-exports[`Typography tests Should Match H5 snapshots 1`] = `"<span class=\\"h5\\">Typography H5 Variant</span>"`;
+exports[`Typography tests Should Match H5 snapshots 1`] = `"<span class=\\"root h5\\">Typography H5 Variant</span>"`;
 
-exports[`Typography tests Should Match H6 snapshots 1`] = `"<span class=\\"h6\\">Typography H6 Variant</span>"`;
+exports[`Typography tests Should Match H6 snapshots 1`] = `"<span class=\\"root h6\\">Typography H6 Variant</span>"`;
 
-exports[`Typography tests Should Match Link snapshots 1`] = `"<span class=\\"link\\">Typography link Variant</span>"`;
+exports[`Typography tests Should Match p snapshots 1`] = `"<span class=\\"root p1\\">Typography p Variant</span>"`;
 
-exports[`Typography tests Should Match p snapshots 1`] = `"<span class=\\"p\\">Typography p Variant</span>"`;
-
-exports[`Typography tests should match H2 snapshot 1`] = `"<span class=\\"h2\\">Typography H2 Variant</span>"`;
+exports[`Typography tests should match H2 snapshot 1`] = `"<span class=\\"root h2\\">Typography H2 Variant</span>"`;

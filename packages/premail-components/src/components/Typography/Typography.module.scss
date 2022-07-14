@@ -1,10 +1,40 @@
-@mixin plainText {
+.root {
+  margin: 0;
+  margin-block-start: 1rem;
+  margin-block-end: 1rem;
+}
+
+@mixin p1 {
   text-align: left;
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
+  letter-spacing: 0px;
+  color: var(--typography-color);
+  opacity: 1;
+}
+
+@mixin p2 {
+  text-align: left;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0px;
+  color: var(--typography-color);
+  opacity: 1;
+}
+
+@mixin p3 {
+  text-align: left;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
   letter-spacing: 0px;
   color: var(--typography-color);
   opacity: 1;
@@ -82,40 +112,35 @@
   opacity: 1;
 }
 
-.p {
-  @include plainText;
+.p1 {
+  @include p1;
 }
 
-.li {
-  @include plainText;
-
-  // &::before{
-  // content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
-  // color: var(--typography-color);; /* Change the color */
-  // font-weight: bold; /* If you want it to be bold */
-  // display: inline-block; /* Needed to add space between the bullet and the text */
-  // width: 16px; /* Also needed for space (tweak if needed) */
-  // margin-left: -16px; /* Also needed for space (tweak if needed) */
-  // }
+.p2 {
+  @include p2;
 }
 
-.strike {
-  @include plainText;
-  text-decoration: line-through;
-}
-
-@mixin link {
-  text-align: left;
-  font-family: "Open Sans";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 20px;
-  letter-spacing: 0px;
-  color: var(--premail-link);
-  opacity: 1;
+.p3 {
+  @include p3;
 }
 
 .link {
-  @include link;
+  color: var(--premail-link);
+  text-decoration-color: var(--premail-link);
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.disableMargins {
+  margin: 0px;
 }
