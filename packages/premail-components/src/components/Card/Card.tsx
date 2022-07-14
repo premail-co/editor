@@ -15,12 +15,19 @@ type CardElevationType =
   | "elevation-9"
   | "elevation-10";
 
+interface BorderConfig {
+  disableBorderBlockStart?: boolean;
+  disableBorderInlineStart?: boolean;
+  disableBorderInlineEnd?: boolean;
+  disableBorderBlockEnd?: boolean;
+}
+
 interface ICardProps
   extends IOverridable,
     IStylable,
     React.PropsWithChildren<{}> {
   elevation?: CardElevationType;
-  border?: boolean;
+  border?: boolean | BorderConfig;
   id?: string;
 }
 
@@ -41,6 +48,40 @@ const getCardElevationFromString = (elevation?: string) => {
       return "";
   }
 };
+
+const getBorderStyleFromProps = (border?: boolean | BorderConfig) => {
+  if (border == null || border == false) {
+    return "";
+  }
+
+  if (typeof border == "boolean") {
+    return styles.border;
+  }
+  const borderBlockStart =
+    border.disableBorderBlockStart == true
+      ? styles["disable-border-block-start"]
+      : "";
+  const borderInlineEnd =
+    border.disableBorderInlineEnd == true
+      ? styles["disable-border-inline-end"]
+      : "";
+  const borderBlockEnd =
+    border.disableBorderBlockEnd == true
+      ? styles["disable-border-block-end"]
+      : "";
+  const borderDisableInlineStart =
+    border.disableBorderInlineStart == true
+      ? styles["disable-border-inline-start"]
+      : "";
+
+  return concatClassNames(
+    borderBlockStart,
+    borderInlineEnd,
+    borderBlockEnd,
+    borderDisableInlineStart
+  );
+};
+
 const Card = React.forwardRef<
   HTMLDivElement,
   React.PropsWithChildren<ICardProps>
@@ -49,7 +90,10 @@ const Card = React.forwardRef<
     () => getCardElevationFromString(props.elevation),
     [props.elevation]
   );
-  const bordersClassName = props.border ? styles.border : "";
+  const bordersClassName = React.useMemo(
+    () => getBorderStyleFromProps(props.border),
+    [JSON.stringify(props.border)]
+  );
   const overrideClassName = props.override ?? "";
   const className = React.useMemo(
     () =>

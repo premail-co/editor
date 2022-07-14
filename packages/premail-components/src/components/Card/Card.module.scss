@@ -8,6 +8,21 @@
 .border {
   border: 1px solid var(--card-border-color);
 }
+.disable-border-block-start {
+  border-block-start: none;
+}
+
+.disable-border-block-end {
+  border-block-end: none;
+}
+
+.disable-border-inline-start {
+  border-inline-start: none;
+}
+
+.disable-border-inline-end {
+  border-inline-end: none;
+}
 
 .elevation-1 {
   box-shadow: var(--card-shadow-color) 0px 1px 1px 0px;

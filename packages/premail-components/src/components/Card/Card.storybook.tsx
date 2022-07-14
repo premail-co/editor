@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, TypographyVariant_ENUM } from "../Typography";
+import { Typography } from "../Typography";
 
 import { Card } from "../Card/Card";
 import reactElementToJSXString from "react-element-to-jsx-string";
@@ -75,11 +75,11 @@ export const Overview = () => {
   return (
     <div style={{ maxWidth: 900, margin: "auto", padding: "0px 5px" }}>
       <h1>
-        <Typography variant={TypographyVariant_ENUM.h1}>Card</Typography>
+        <Typography variant={"h1"}>Card</Typography>
       </h1>
 
       <p>
-        <Typography variant={TypographyVariant_ENUM.p}>
+        <Typography variant={"p1"}>
           Cards are content containers that structure web pages.{" "}
           <InlineCode>@premail/components</InlineCode> cards are implemented as
           block elements with some padding, an optional border configurable by{" "}
@@ -88,11 +88,11 @@ export const Overview = () => {
         </Typography>
       </p>
       <h2>
-        <Typography variant={TypographyVariant_ENUM.h3}>Usage</Typography>
+        <Typography variant={"h3"}>Usage</Typography>
       </h2>
 
       <p>
-        <Typography variant={TypographyVariant_ENUM.p}>
+        <Typography variant={"p1"}>
           To begin using the <InlineCode>Card</InlineCode> component import the
           following:
         </Typography>
@@ -100,10 +100,10 @@ export const Overview = () => {
       <CodeBlock>{`import { Card } from "@premail/components";`}</CodeBlock>
 
       <h2>
-        <Typography variant={TypographyVariant_ENUM.h3}>Cards</Typography>
+        <Typography variant={"h3"}>Cards</Typography>
       </h2>
       <p>
-        <Typography variant={TypographyVariant_ENUM.p}>
+        <Typography variant={"p1"}>
           We can render cards in different elevations and border styles.
         </Typography>
       </p>
@@ -132,9 +132,7 @@ export const Overview = () => {
           }}
         >
           <Card elevation={parseElevation(elevation)} border={hasBorder}>
-            <Typography variant={TypographyVariant_ENUM.h6}>
-              Card demo
-            </Typography>
+            <Typography variant={"h6"}>Card demo</Typography>
           </Card>
         </div>
 
@@ -146,14 +144,10 @@ export const Overview = () => {
             flex: "0 0 100%",
           }}
         >
-          <Typography variant={TypographyVariant_ENUM.h6}>
-            Card Playground
-          </Typography>
+          <Typography variant={"h6"}>Card Playground</Typography>
           <br />
           <br />
-          <Typography variant={TypographyVariant_ENUM.p}>
-            Set Elevation value:
-          </Typography>
+          <Typography variant={"p1"}>Set Elevation value:</Typography>
           <br />
           <br />
 
@@ -178,9 +172,7 @@ export const Overview = () => {
           </select>
           <br />
           <br />
-          <Typography variant={TypographyVariant_ENUM.p}>
-            Set Borders:
-          </Typography>
+          <Typography variant={"p1"}>Set Borders:</Typography>
           <br />
           <br />
           <input
@@ -215,9 +207,7 @@ export const Overview = () => {
               : {})}
             border={hasBorder}
           >
-            <Typography variant={TypographyVariant_ENUM.h6}>
-              Card demo
-            </Typography>
+            <Typography variant={"h6"}>Card demo</Typography>
           </Card>
         )}
       </CodeBlock>

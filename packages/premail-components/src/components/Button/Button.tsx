@@ -2,6 +2,7 @@ import React, { CSSProperties } from "react";
 import styles from "./Button.module.scss";
 import { IOverridable } from "../../types";
 import { concatClassNames } from "../util/concatClassNames";
+import { Typography } from "../Typography/Typography";
 
 interface IButtonProps
   extends IOverridable,
@@ -90,8 +91,11 @@ const Button = React.forwardRef<
     [props.size]
   );
 
-  const contentPaddingClass = React.useMemo(
-    () => getStylesFromIconPosition(props.iconPosition, props.icon),
+  const contentClass = React.useMemo(
+    () =>
+      concatClassNames(
+        getStylesFromIconPosition(props.iconPosition, props.icon)
+      ),
     [props.iconPosition, props.icon]
   );
 
@@ -108,9 +112,7 @@ const Button = React.forwardRef<
   return (
     <button className={className} ref={ref} {...HTMLButtonProps}>
       {Icon && props.iconPosition != "end" ? Icon : ""}
-      {props.children && (
-        <span className={contentPaddingClass}>{props.children}</span>
-      )}
+      {props.children && <span className={contentClass}>{props.children}</span>}
       {Icon && props.iconPosition == "end" ? Icon : ""}
     </button>
   );
