@@ -12,6 +12,8 @@ zipfs vscode extension
 mermaid vscode extension
 ```
 
-# Wireframe
+# Design Mockups
 
-![wireframe](./wireframe.png)
+![wireframe](./design/Dashboard-content.png)
+![wireframe](./design/Dashboard-layout.png)
+![wireframe](./design/Dashboard-email-settings.png)
