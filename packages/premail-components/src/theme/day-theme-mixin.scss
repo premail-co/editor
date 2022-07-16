@@ -6,7 +6,7 @@
   --backdrop-background-color: #fff;
 
   /* Button */
-  --button-background-color: var(--primary-main);
+  --button-background-color: var(--premail-black);
   --button-border-radius: var(--border-radius-common);
   --button-background-color-disabled: var(--gray-main);
   --button-color: var(--primary-contrast);
@@ -51,7 +51,11 @@
   --card-background-color: var(--pramail-white);
   --card-border-color: var(--premail-gray-1);
   --card-shadow-color: var(--premail-shadow);
-  --card-border-radius: var(--premail-border-radius-common)
+  --card-border-radius: var(--premail-border-radius-common);
+
+  /* Dashboard Template */
+  --dashboard-template-header-height: 60px;
+  --dashboard-template-header-background-color: var(--premail-black);
 
   /* Header Banner */
   --header-banner-background-color: #bdb88a;

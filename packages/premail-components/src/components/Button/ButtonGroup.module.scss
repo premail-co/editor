@@ -1,12 +1,13 @@
 .root {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   box-sizing: border-box;
   white-space: nowrap;
-  :not(:last-child) {
-    border-inline-end: var(--button-group-border-inline-end);
-  }
 }
 
 .outline {
   border: var(--button-group-border);
+  :not(:last-child) {
+    border-inline-end: var(--button-group-border-inline-end);
+  }
 }
