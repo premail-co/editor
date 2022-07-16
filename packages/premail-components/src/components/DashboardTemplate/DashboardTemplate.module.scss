@@ -1,0 +1,29 @@
+.root {
+  width: 100vw;
+  height: 100vh;
+  min-width: 800px;
+}
+
+.header {
+  width: 100vw;
+  height: var(--dashboard-template-header-height);
+  background-color: var(--dashboard-template-header-background-color);
+  display: flex;
+  min-width: inherit;
+}
+
+.body {
+  display: flex;
+  height: calc(100vh - 60px);
+  min-width: inherit;
+}
+
+.previewArea {
+  width: 80%;
+  min-width: 500px;
+}
+
+.toolbar {
+  width: 20%;
+  min-width: 300px;
+}
