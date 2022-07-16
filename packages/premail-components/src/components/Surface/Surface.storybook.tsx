@@ -1,13 +1,13 @@
 import React from "react";
-import { Typography } from "../Typography";
+import { Typography } from "../Typography/index";
 
-import { Card } from "../Card/Card";
+import { Surface } from "./Surface";
 import reactElementToJSXString from "react-element-to-jsx-string";
 
 // This default export determines where you story goes in the story list
 export default {
-  title: "Card",
-  component: Card,
+  title: "Surface",
+  component: Surface,
 };
 
 const CodeBlock = (
@@ -71,18 +71,40 @@ const parseElevation = (stringVal?: string) => {
 
 export const Overview = () => {
   const [elevation, setElevation] = React.useState("no-elevation");
+  const [disableBorderBlockStart, setDisableBorderBlockStart] =
+    React.useState(false);
+  const [disableBorderBlockEnd, setDisableBorderBlockEnd] =
+    React.useState(false);
+  const [disableBorderInlineStart, setDisableBorderInlineStart] =
+    React.useState(false);
+  const [disableBorderInlineEnd, setDisableBorderInlineEnd] =
+    React.useState(false);
   const [hasBorder, setBorder] = React.useState(true);
+
+  const renderBorder =
+    hasBorder &&
+    (disableBorderBlockStart ||
+      disableBorderBlockEnd ||
+      disableBorderInlineStart ||
+      disableBorderInlineEnd)
+      ? {
+          ...(disableBorderBlockStart ? { disableBorderBlockStart } : {}),
+          ...(disableBorderBlockEnd ? { disableBorderBlockEnd } : {}),
+          ...(disableBorderInlineStart ? { disableBorderInlineStart } : {}),
+          ...(disableBorderInlineEnd ? { disableBorderInlineEnd } : {}),
+        }
+      : hasBorder;
   return (
     <div style={{ maxWidth: 900, margin: "auto", padding: "0px 5px" }}>
       <h1>
-        <Typography variant={"h1"}>Card</Typography>
+        <Typography variant={"h1"}>Surface</Typography>
       </h1>
 
       <p>
         <Typography variant={"p1"}>
-          Cards are content containers that structure web pages.{" "}
-          <InlineCode>@premail/components</InlineCode> cards are implemented as
-          block elements with some padding, an optional border configurable by{" "}
+          Surfaces are content containers that structure web pages.{" "}
+          <InlineCode>@premail/components</InlineCode> surfaces are implemented
+          as block elements with padding, an optional border configurable by{" "}
           <InlineCode>border</InlineCode> prop and optional elevation
           configurable by the <InlineCode>elevation</InlineCode> prop.
         </Typography>
@@ -93,21 +115,21 @@ export const Overview = () => {
 
       <p>
         <Typography variant={"p1"}>
-          To begin using the <InlineCode>Card</InlineCode> component import the
-          following:
+          To begin using the <InlineCode>Surface</InlineCode> component import
+          the following:
         </Typography>
       </p>
-      <CodeBlock>{`import { Card } from "@premail/components";`}</CodeBlock>
+      <CodeBlock>{`import { Surface } from "@premail/components";`}</CodeBlock>
 
       <h2>
-        <Typography variant={"h3"}>Cards</Typography>
+        <Typography variant={"h3"}>Surfaces</Typography>
       </h2>
       <p>
         <Typography variant={"p1"}>
-          We can render cards in different elevations and border styles.
+          We can render surfaces in different elevations and border styles.
         </Typography>
       </p>
-      <Card
+      <Surface
         border
         style={{
           padding: "40px",
@@ -131,9 +153,11 @@ export const Overview = () => {
             border: "1px dashed gray",
           }}
         >
-          <Card elevation={parseElevation(elevation)} border={hasBorder}>
-            <Typography variant={"h6"}>Card demo</Typography>
-          </Card>
+          <Surface elevation={parseElevation(elevation)} border={renderBorder}>
+            <Typography variant={"h6"} style={{ margin: 20 }}>
+              Surface demo
+            </Typography>
+          </Surface>
         </div>
 
         <div
@@ -144,7 +168,7 @@ export const Overview = () => {
             flex: "0 0 100%",
           }}
         >
-          <Typography variant={"h6"}>Card Playground</Typography>
+          <Typography variant={"h6"}>Surface Playground</Typography>
           <br />
           <br />
           <Typography variant={"p1"}>Set Elevation value:</Typography>
@@ -197,18 +221,81 @@ export const Overview = () => {
             }}
           />
           <label htmlFor={"borders"}> without borders</label>
+          <br />
+
+          <input
+            type="checkbox"
+            id="disable-block-start"
+            name="borders"
+            disabled={hasBorder == false}
+            checked={disableBorderBlockStart}
+            onChange={() => {
+              setDisableBorderBlockStart(!disableBorderBlockStart);
+            }}
+          />
+          <label htmlFor={"disable-block-start"}>
+            disable border block start
+          </label>
+
+          <br />
+
+          <input
+            type="checkbox"
+            id="disable-block-end"
+            name="borders"
+            disabled={hasBorder == false}
+            checked={disableBorderBlockEnd}
+            onChange={() => {
+              setDisableBorderBlockEnd(!disableBorderBlockEnd);
+            }}
+          />
+          <label htmlFor={"disable-block-end"}>disable border block end</label>
+
+          <br />
+
+          <input
+            type="checkbox"
+            id="disable-inline-start"
+            name="borders"
+            disabled={hasBorder == false}
+            checked={disableBorderInlineStart}
+            onChange={() => {
+              setDisableBorderInlineStart(!disableBorderInlineStart);
+            }}
+          />
+          <label htmlFor={"disable-inline-start"}>
+            disable border inline start
+          </label>
+
+          <br />
+
+          <input
+            type="checkbox"
+            id="disable-inline-end"
+            name="borders"
+            disabled={hasBorder == false}
+            checked={disableBorderInlineEnd}
+            onChange={() => {
+              setDisableBorderInlineEnd(!disableBorderInlineEnd);
+            }}
+          />
+          <label htmlFor={"disable-inline-end"}>
+            disable border inline end
+          </label>
         </div>
-      </Card>
+      </Surface>
       <CodeBlock style={{ marginTop: 30 }}>
         {reactElementToJSXString(
-          <Card
+          <Surface
             {...(parseElevation(elevation)
               ? { elevation: parseElevation(elevation) }
               : {})}
-            border={hasBorder}
+            border={renderBorder}
           >
-            <Typography variant={"h6"}>Card demo</Typography>
-          </Card>
+            <Typography variant={"h6"} style={{ margin: 20 }}>
+              Surface demo
+            </Typography>
+          </Surface>
         )}
       </CodeBlock>
     </div>

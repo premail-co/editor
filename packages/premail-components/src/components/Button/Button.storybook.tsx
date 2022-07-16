@@ -14,7 +14,7 @@ import {
   FontColor,
   TextHighlightColor,
 } from "@premail/icons";
-import { Card } from "../Card/Card";
+import { Surface } from "../Surface/Surface";
 import { ButtonGroup } from "./ButtonGroup";
 
 // This default export determines where you story goes in the story list
@@ -102,7 +102,7 @@ export const Overview = () => {
       <Typography variant={"p1"} renderElement={"p"}>
         We can make basic buttons with in all variant types
       </Typography>
-      <Card
+      <Surface
         border
         style={{
           padding: "40px",
@@ -121,9 +121,9 @@ export const Overview = () => {
         <Button variant="primary" disabled>
           Disabled
         </Button>
-      </Card>
+      </Surface>
       <CodeBlock>
-        {`<Card
+        {`<Surface
   style={{
     padding: "40px",
     display: "flex",
@@ -137,7 +137,7 @@ export const Overview = () => {
   <Button variant="outlined">Outlined button</Button>
   <Button variant="warning">Warning button</Button>
   <Button variant="danger">Danger button</Button>
-</Card>`}
+</Surface>`}
       </CodeBlock>
 
       <Typography variant={"h2"} renderElement="h2">
@@ -149,7 +149,7 @@ export const Overview = () => {
         message with visual cue.
       </Typography>
 
-      <Card
+      <Surface
         border
         style={{
           padding: "40px",
@@ -171,9 +171,9 @@ export const Overview = () => {
         <Button variant="outlined" icon={Link} />
         <Button variant="danger" icon={Unlink} />
         <Button variant="warning" icon={Move} />
-      </Card>
+      </Surface>
       <CodeBlock>
-        {`<Card
+        {`<Surface
   style={{
     padding: "40px",
     display: "flex",
@@ -194,7 +194,7 @@ export const Overview = () => {
   <Button variant="outlined" icon={Link} />
   <Button variant="danger" icon={Unlink} />
   <Button variant="warning" icon={Move} />
-</Card>`}
+</Surface>`}
       </CodeBlock>
       <h2>
         <Typography variant={"h3"}>Button group</Typography>
@@ -210,7 +210,7 @@ export const Overview = () => {
           group of buttons.
         </Typography>
       </p>
-      <Card
+      <Surface
         border
         style={{
           padding: "40px",
@@ -239,8 +239,8 @@ export const Overview = () => {
           <Button variant="secondary" icon={TextHighlightColor} />
           <Button variant="secondary" icon={FontColor} />
         </ButtonGroup>
-      </Card>
-      <CodeBlock>{`<Card
+      </Surface>
+      <CodeBlock>{`<Surface
   style={{
     padding: "40px",
     display: "flex",
@@ -268,7 +268,7 @@ export const Overview = () => {
     <Button variant="secondary" icon={TextHighlightColor} />
     <Button variant="secondary" icon={FontColor} />
   </ButtonGroup>
-</Card>`}</CodeBlock>
+</Surface>`}</CodeBlock>
       <h2>
         <Typography variant={"h3"}>Button sizes</Typography>
       </h2>
@@ -281,7 +281,7 @@ export const Overview = () => {
           <InlineCode>medium</InlineCode>.
         </Typography>
       </p>
-      <Card
+      <Surface
         border
         style={{
           padding: "40px",
@@ -315,8 +315,8 @@ export const Overview = () => {
             large size
           </Button>
         </div>
-      </Card>
-      <CodeBlock>{`<Card
+      </Surface>
+      <CodeBlock>{`<Surface
   style={{
     padding: "40px",
     display: "flex",
@@ -349,7 +349,7 @@ export const Overview = () => {
       large size
     </Button>
   </div>
-</Card>`}</CodeBlock>
+</Surface>`}</CodeBlock>
     </div>
   );
 };

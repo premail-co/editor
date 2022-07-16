@@ -1,9 +1,9 @@
 import React from "react";
-import styles from "./Card.module.scss";
-import { IOverridable, IStylable } from "../../types";
+import styles from "./Surface.module.scss";
+import { IOverridable, IStylable } from "../../types/index";
 import { concatClassNames } from "../util/concatClassNames";
 
-type CardElevationType =
+type SurfaceElevationType =
   | "elevation-1"
   | "elevation-2"
   | "elevation-3"
@@ -22,16 +22,16 @@ interface BorderConfig {
   disableBorderBlockEnd?: boolean;
 }
 
-interface ICardProps
+interface ISurfaceProps
   extends IOverridable,
     IStylable,
     React.PropsWithChildren<{}> {
-  elevation?: CardElevationType;
+  elevation?: SurfaceElevationType;
   border?: boolean | BorderConfig;
   id?: string;
 }
 
-const getCardElevationFromString = (elevation?: string) => {
+const getSurfaceElevationFromString = (elevation?: string) => {
   switch (elevation) {
     case "elevation-1":
     case "elevation-2":
@@ -75,6 +75,7 @@ const getBorderStyleFromProps = (border?: boolean | BorderConfig) => {
       : "";
 
   return concatClassNames(
+    styles.border,
     borderBlockStart,
     borderInlineEnd,
     borderBlockEnd,
@@ -82,12 +83,12 @@ const getBorderStyleFromProps = (border?: boolean | BorderConfig) => {
   );
 };
 
-const Card = React.forwardRef<
+const Surface = React.forwardRef<
   HTMLDivElement,
-  React.PropsWithChildren<ICardProps>
+  React.PropsWithChildren<ISurfaceProps>
 >((props, ref) => {
   const elevationClassName = React.useMemo(
-    () => getCardElevationFromString(props.elevation),
+    () => getSurfaceElevationFromString(props.elevation),
     [props.elevation]
   );
   const bordersClassName = React.useMemo(
@@ -112,5 +113,5 @@ const Card = React.forwardRef<
     </div>
   );
 });
-export { Card };
-export type { ICardProps };
+export { Surface };
+export type { ISurfaceProps };

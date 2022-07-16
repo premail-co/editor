@@ -1,0 +1,56 @@
+.root {
+  background: var(--surface-background-color) 0% 0% no-repeat border-box;
+  opacity: 1;
+  padding: 10px 24px 10px 24px;
+  border-radius: var(--surface-border-radius);
+  box-sizing: border-box;
+}
+.border {
+  border: 1px solid var(--surface-border-color);
+}
+.disable-border-block-start {
+  border-block-start: none;
+}
+
+.disable-border-block-end {
+  border-block-end: none;
+}
+
+.disable-border-inline-start {
+  border-inline-start: none;
+}
+
+.disable-border-inline-end {
+  border-inline-end: none;
+}
+
+.elevation-1 {
+  box-shadow: var(--surface-shadow-color) 0px 1px 1px 0px;
+}
+.elevation-2 {
+  box-shadow: var(--surface-shadow-color) 0px 1px 2px 0px;
+}
+.elevation-3 {
+  box-shadow: var(--surface-shadow-color) 0px 1px 4px 0px;
+}
+.elevation-4 {
+  box-shadow: var(--surface-shadow-color) 0px 2px 5px 0px;
+}
+.elevation-5 {
+  box-shadow: var(--surface-shadow-color) 0px 2px 8px 0px;
+}
+.elevation-6 {
+  box-shadow: var(--surface-shadow-color) 0px 3px 10px 0px;
+}
+.elevation-7 {
+  box-shadow: var(--surface-shadow-color) 0px 4px 10px 0px;
+}
+.elevation-8 {
+  box-shadow: var(--surface-shadow-color) 0px 4px 11px 0px;
+}
+.elevation-9 {
+  box-shadow: var(--surface-shadow-color) 0px 4px 12px 0px;
+}
+.elevation-10 {
+  box-shadow: var(--surface-shadow-color) 0px 5px 14px 0px;
+}
