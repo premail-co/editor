@@ -1,0 +1,115 @@
+@import "../../theme/a11y.scss";
+
+.root {
+  background: var(--input-background-color) 0% 0% no-repeat padding-box;
+  border: var(--input-border);
+  border-radius: var(--input-border-radius);
+  opacity: 1;
+  display: flex;
+  width: 100%;
+  padding: 10px 15px 10px 15px;
+  box-sizing: border-box;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  &:focus-within {
+    outline: none;
+  }
+
+  & svg {
+    color: var(--input-color);
+  }
+
+  @include a11y-oulline;
+
+  &::before {
+    /* Position the pseudo-element. */
+
+    z-index: -1;
+  }
+  &:focus-within::before {
+    /* Show the pseudo-element on hover. */
+    opacity: 1;
+  }
+
+  // helper text
+
+  &[data-content]::after {
+    content: attr(data-content);
+    position: absolute;
+    bottom: -20px;
+    left: 0px;
+    // color: var(--input-error-color);
+    transition: opacity 200ms ease-in-out;
+    font-size: 12px;
+    font-weight: var(--input-font-weight);
+    font-family: var(--input-font-family);
+    color: var(--input-color);
+  }
+
+  &[data-content] {
+    margin-bottom: 20px;
+  }
+}
+
+.rootHelperText {
+  margin-bottom: 20px;
+}
+
+.rootError {
+  border-color: var(--input-error-color);
+  &[data-content]::after {
+    color: var(--input-error-color) !important;
+  }
+  &[data-content]:focus-within::after {
+    // remove color to keep consistency between accessiblity outline and error message text
+    color: var(--input-color);
+  }
+}
+.rootDisabled {
+  opacity: 0.8;
+  background-color: var(--input-background-color-disabled);
+  user-select: none;
+  cursor: not-allowed;
+  border-color: var(--input-background-color-disabled);
+  // border-style: none;
+  &[data-content]::after {
+    opacity: 0.8;
+  }
+}
+
+.input {
+  border-width: 0px;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-size: 14px;
+  font-weight: var(--input-font-weight);
+  font-family: var(--input-font-family);
+  letter-spacing: 0;
+  background-color: inherit;
+  color: var(--input-color);
+  &:focus {
+    outline: none;
+  }
+
+  &::-webkit-calendar-picker-indicator {
+    filter: var(--input-calendar-picker-indicator-filter);
+  }
+  &:focus::-webkit-calendar-picker-indicator {
+    filter: var(--input-calendar-picker-indicator-filter-focus);
+  }
+
+  &:disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+    user-select: none;
+  }
+}
+
+.icon {
+  vertical-align: middle;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+}
