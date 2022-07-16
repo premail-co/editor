@@ -1,6 +1,6 @@
 import React from "react";
 import { Input } from "./Input";
-import { Card } from "../Card";
+import { Surface } from "../Surface/index";
 import { Typography } from "../Typography";
 import { Chevron } from "@premail/icons";
 
@@ -12,7 +12,7 @@ export default {
 const Template = () => {
   const [invalidInput, setInvalidInput] = React.useState("");
   return (
-    <Card style={{ padding: 10 }}>
+    <Surface style={{ padding: 10 }}>
       <Typography variant={"h6"}>Text input</Typography>
       <Input
         id={"text-input"}
@@ -63,7 +63,7 @@ const Template = () => {
         icon={Chevron}
         iconPosition="end"
       />
-    </Card>
+    </Surface>
   );
 };
 

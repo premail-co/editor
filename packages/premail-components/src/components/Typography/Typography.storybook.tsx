@@ -1,7 +1,7 @@
 import React from "react";
 import reactElementToJSXString from "react-element-to-jsx-string";
 import { Typography } from ".";
-import { Card } from "../Card/Card";
+import { Surface } from "../Surface/Surface";
 // This default export determines where you story goes in the story list
 export default {
   title: "Typography",
@@ -84,7 +84,7 @@ export const Overview = () => {
         <InlineCode>p1</InlineCode>, <InlineCode>p2</InlineCode> and{" "}
         <InlineCode>p3</InlineCode>
       </Typography>
-      <Card
+      <Surface
         border
         style={{
           padding: "40px",
@@ -119,9 +119,9 @@ export const Overview = () => {
         <Typography variant={"p3"} disableMargins>
           Text p3
         </Typography>
-      </Card>
+      </Surface>
       <CodeBlock>
-        {`<Card
+        {`<Surface
   border
   style={{
     padding: "40px",
@@ -138,7 +138,7 @@ export const Overview = () => {
   <Typography variant={"p1"} disableMargins> Text p1 </Typography>
   <Typography variant={"p2"} disableMargins> Text p2 </Typography>
   <Typography variant={"p3"} disableMargins> Text p3 </Typography>
-</Card>`}
+</Surface>`}
       </CodeBlock>
 
       <Typography variant={"h2"} renderElement="h2">
@@ -151,7 +151,7 @@ export const Overview = () => {
         props.
       </Typography>
 
-      <Card
+      <Surface
         border
         style={{
           padding: "40px",
@@ -171,9 +171,9 @@ export const Overview = () => {
         <Typography variant={"p1"} strikethrough>
           The quick brown fox jumps over the lazy dog.
         </Typography>
-      </Card>
+      </Surface>
       <CodeBlock>
-        {`<Card
+        {`<Surface
   border
   style={{
     padding: "40px",
@@ -193,7 +193,7 @@ export const Overview = () => {
   <Typography variant={"p1"} strikethrough>
     The quick brown fox jumps over the lazy dog.
   </Typography>
-</Card>`}
+</Surface>`}
       </CodeBlock>
       <Typography variant={"h2"} renderElement="h2">
         Render Elements
@@ -209,7 +209,7 @@ export const Overview = () => {
         </a>
         .
       </Typography>
-      <Card
+      <Surface
         border
         style={{
           padding: "40px",
@@ -247,9 +247,9 @@ export const Overview = () => {
         <Typography variant={"p1"} renderElement="h6" disableMargins>
           I render in an h6 tag.
         </Typography>
-      </Card>
+      </Surface>
       <CodeBlock>
-        {`<Card
+        {`<Surface
   border
   style={{
     padding: "40px",
@@ -287,7 +287,7 @@ export const Overview = () => {
   <Typography variant={"p1"} renderElement="h6" disableMargins>
     I render in an h6 tag.
   </Typography>
-</Card>`}
+</Surface>`}
       </CodeBlock>
     </div>
   );
