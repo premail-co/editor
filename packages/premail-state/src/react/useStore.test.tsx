@@ -1,27 +1,31 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { act } from "react-dom/test-utils";
-import { createObservable } from "../state/Observable";
-import { createStoreId, Store } from "../state/Store";
+import { createDefinition } from "../index";
+import { Observable } from "../state/Observable";
+import { Store } from "../state/Store";
 import { StateContextProvider } from "./StateContextProvider";
-import { useStore } from "./useStore";
+import { useInjectable } from "./useInjectable";
 
 const STORE_CONSUMER_ID = "store-consumer-testid";
 
 class TestStore extends Store {
-  valueobservable = createObservable(100);
-  constructor() {
-    super();
-    this.register(this.valueobservable);
+  valueobservable = new Observable(100);
+
+  destroy() {
+    this.valueobservable.clearSubscribers();
   }
 }
-const testStore = createStoreId({ class: TestStore });
+const testStore = createDefinition({ class: TestStore });
 
 const StoreConsumerComponent = () => {
-  const store = useStore(testStore);
+  const store = useInjectable(testStore);
+  if (store == null) {
+    return <>"null"</>;
+  }
   return (
     <div data-testid={STORE_CONSUMER_ID}>
-      {store && store.valueobservable.instance.getValue()}
+      {store && store.valueobservable.getValue()}
     </div>
   );
 };
@@ -54,7 +58,7 @@ describe("useStore tests", () => {
 
     act(() => {
       root?.render(
-        <StateContextProvider stores={[testStore]}>
+        <StateContextProvider injectables={[testStore]}>
           <StoreConsumerComponent />
         </StateContextProvider>
       );

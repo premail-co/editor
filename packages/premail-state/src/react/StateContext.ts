@@ -2,7 +2,7 @@ import React from "react";
 import { IStateContext } from "./types";
 
 const defaultValues: IStateContext = {
-  storeRegisty: null,
+  instanceManager: null,
 };
 
 const StateContext = React.createContext(defaultValues);

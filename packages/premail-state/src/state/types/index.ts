@@ -1,5 +1,5 @@
 /**
- * Classes that implment IInstantiable can be destroyed, although javascript doens't support
+ * Classes that implment IInstantiable can be cleaned up, although javascript doens't support
  * reclaiming memory, this method is useful to remove all references to objects that can cause memory
  * leaks or clean up other side effects,
  */
@@ -7,11 +7,12 @@ export interface IInstantiable {
   /**
    * Clean up function
    */
-  destroy(): void;
+  cleanUp(): void;
 }
 
 interface ISubscriber<T> {
   update(nextValue: T): void;
+  clearCallback(): void;
 }
 
 interface ISubbable<T> {
@@ -28,6 +29,8 @@ interface ISubbable<T> {
    * Removes the observer from the observables list
    */
   notify(omitObservers?: Array<Symbol>): void;
+
+  clearSubscribers(): void;
 }
 
 interface IEncapsulated<T> {
@@ -44,4 +47,29 @@ interface IRegistry<T> {
   unregister(id: Symbol): boolean;
 }
 
-export type { ISubbable, IEncapsulated, IRegistry, Ilookup, ISubscriber };
+interface IInjector {
+  inject(id: { id: Symbol; class: Class<IInjectable> }): {
+    instance: InstanceType<Class<IInjectable>> | null;
+  };
+}
+
+interface IInjectable {
+  readonly pack?: () => string;
+  readonly unpack?: (serialized: string) => void;
+  readonly onStoresRestored?: () => void;
+  readonly onInstanceCreated?: () => void;
+  readonly cleanUp?: () => void;
+}
+
+type Class<I, Args extends any[] = any[]> = new (...args: Args) => I;
+
+export type {
+  ISubbable,
+  IEncapsulated,
+  IRegistry,
+  Ilookup,
+  ISubscriber,
+  IInjector,
+  IInjectable,
+  Class,
+};

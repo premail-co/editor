@@ -1,34 +1,54 @@
 import React from "react";
 import { StateContext } from "./StateContext";
-import { createStoreResgistry, IStoreRegsitry } from "../state/StoreRegistry";
-import type { createStoreId, StoreDerived } from "../state/Store";
-
+import { InstanceManager } from "../index";
+import {
+  createDefinition,
+  SimpleInstanceManagementStrategy,
+} from "../state/InstanceManager";
+import type { Class, IInjectable } from "../state/types";
 interface IStateContextProviderProps extends React.PropsWithChildren<{}> {
-  stores: Array<ReturnType<typeof createStoreId<StoreDerived>>>;
+  injectables: Array<ReturnType<typeof createDefinition<Class<IInjectable>>>>;
 }
 
 const StateContextProvider = (props: IStateContextProviderProps) => {
-  const [storeRegisty, setStoreRegistry] =
-    React.useState<IStoreRegsitry | null>(null);
+  const instanceManager = React.useMemo(
+    () =>
+      new InstanceManager({
+        instanceManagementStrategy: new SimpleInstanceManagementStrategy(),
+      }),
+    []
+  );
+  const previousInjectables = React.useRef<
+    IStateContextProviderProps["injectables"]
+  >([]);
+
+  const [activeInstances, setState] = React.useState<Symbol[]>([]);
 
   React.useEffect(() => {
-    const localreg = createStoreResgistry();
-    for (const store of props.stores) {
-      localreg.register({
-        id: store.id,
-        instance: new store.class(),
-      });
-    }
-    setStoreRegistry(localreg);
     return () => {
-      localreg.destroy();
+      instanceManager.dropInstances();
     };
-  }, []);
+  }, [instanceManager]);
 
-  return (
-    <StateContext.Provider value={{ storeRegisty }}>
-      {props.children}
-    </StateContext.Provider>
+  React.useEffect(() => {
+    const currSet = new Set(props.injectables);
+    const prevSet = new Set(previousInjectables.current);
+    const diff = [...prevSet].filter((element) => !currSet.has(element));
+    instanceManager.unregisterDefinitions(diff.map((def) => def.id));
+    instanceManager.registerDefinitions(Array.from(currSet));
+    setState(instanceManager.listInstanceIds());
+    previousInjectables.current = props.injectables;
+
+    return () => {};
+  }, [instanceManager, props.injectables]);
+
+  return React.useMemo(
+    () => (
+      <StateContext.Provider value={{ instanceManager }}>
+        {props.children}
+      </StateContext.Provider>
+    ),
+    [activeInstances]
   );
 };
 

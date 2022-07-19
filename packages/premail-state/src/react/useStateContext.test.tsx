@@ -1,28 +1,28 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { act } from "react-dom/test-utils";
-import { createObservable } from "../state/Observable";
-import { createStoreId, Store } from "../state/Store";
+import { createDefinition } from "../index";
+import { Observable } from "../state/Observable";
+import { Store } from "../state/Store";
 import { StateContextProvider } from "./StateContextProvider";
 import { useStateContext } from "./useStateContext";
 
 const STORE_CONSUMER_TEST_ID = "store-consumer-test-id";
 
 class TestStore extends Store {
-  observable = createObservable(100);
+  observable = new Observable(100);
 
-  constructor() {
-    super();
-    this.register(this.observable);
+  destroy() {
+    this.observable.clearSubscribers();
   }
 }
-const store = createStoreId({ class: TestStore });
+const store = createDefinition({ class: TestStore });
 
 const ConsumeState = () => {
   const stateContext = useStateContext();
 
-  if (stateContext.storeRegisty == null) {
-    return <div data-testid={STORE_CONSUMER_TEST_ID}>null registry</div>;
+  if (stateContext.instanceManager == null) {
+    return <div data-testid={STORE_CONSUMER_TEST_ID}>null instanceManager</div>;
   }
   return <div data-testid={STORE_CONSUMER_TEST_ID}>hello world</div>;
 };
@@ -31,15 +31,15 @@ const ConsumeState2 = () => {
   const stateContext = useStateContext();
 
   const comsumedStore =
-    stateContext.storeRegisty &&
-    stateContext.storeRegisty.lookup<TestStore>(store.id);
+    stateContext.instanceManager &&
+    stateContext.instanceManager.injectInstance<TestStore>(store.id);
 
   if (comsumedStore == null)
     return <div data-testid={STORE_CONSUMER_TEST_ID}>no stores found</div>;
 
   return (
     <div data-testid={STORE_CONSUMER_TEST_ID}>
-      {comsumedStore.observable.instance.getValue()}
+      {comsumedStore.observable.getValue()}
     </div>
   );
 };
@@ -79,13 +79,13 @@ describe("useStoreContext tests", () => {
     const element = container.querySelector(
       `[data-testid="${STORE_CONSUMER_TEST_ID}"]`
     );
-    expect(element?.innerHTML).toBe("null registry");
+    expect(element?.innerHTML).toBe("null instanceManager");
   });
   it("Shoud consume store registry and store values", () => {
     if (!container || !root) fail();
     act(() => {
       root?.render(
-        <StateContextProvider stores={[store]}>
+        <StateContextProvider injectables={[store]}>
           <ConsumeState2 />
         </StateContextProvider>
       );

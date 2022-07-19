@@ -2,7 +2,6 @@ import React, { CSSProperties } from "react";
 import styles from "./Button.module.scss";
 import { IOverridable } from "../../types";
 import { concatClassNames } from "../util/concatClassNames";
-import { Typography } from "../Typography/Typography";
 
 interface IButtonProps
   extends IOverridable,

@@ -1,16 +1,12 @@
-import { logger } from "../logger";
-import { IEncapsulated, IInstantiable, ISubscriber, ISubbable } from "./types";
+import { IEncapsulated, ISubscriber, ISubbable } from "./types";
 
 type ObserverID = Symbol;
 
-interface IObservable<T>
-  extends ISubbable<T>,
-    IEncapsulated<T>,
-    IInstantiable {}
+interface IObservable<T> extends ISubbable<T>, IEncapsulated<T> {}
 
 class Observable<T> implements IObservable<T> {
   private value: T;
-  private subscribers: Map<Symbol, ISubscriber<T>> | null = new Map();
+  private subscribers: Map<Symbol, ISubscriber<T>> = new Map();
 
   constructor(value: T) {
     this.value = value;
@@ -39,12 +35,6 @@ class Observable<T> implements IObservable<T> {
    * @throws Error if the observer instance was already marked as destroyed
    */
   public subscribe(args: { id: Symbol; instance: ISubscriber<T> }) {
-    if (this.subscribers == null) {
-      throw new Error(
-        `Instance already destroyed. You already called destroy() on this observable.`
-      );
-    }
-
     if (this.subscribers.has(args.id)) {
       return false;
     }
@@ -59,12 +49,6 @@ class Observable<T> implements IObservable<T> {
    * @throws Error if the observer instance was already marked as destroyed
    */
   public unsubscribe(id: Symbol) {
-    if (this.subscribers == null) {
-      throw new Error(
-        `Instance already destroyed. You already called destroy() on this observable.`
-      );
-    }
-
     if (this.subscribers.has(id) == false) {
       return false;
     }
@@ -77,12 +61,6 @@ class Observable<T> implements IObservable<T> {
    * @throws Error if the observer instance was already marked as destroyed
    */
   public notify(omitObservers?: Array<ObserverID>) {
-    if (this.subscribers == null) {
-      throw new Error(
-        `Instance already destroyed. You already called destroy() on this observable.`
-      );
-    }
-
     const omit = omitObservers ?? [];
 
     for (const [id, subscriber] of this.subscribers.entries()) {
@@ -92,9 +70,9 @@ class Observable<T> implements IObservable<T> {
         }
       } catch (e) {
         if (e instanceof Error) {
-          logger.error(`Unable to call observer callback`);
-          logger.error(`${e.message}`);
-          logger.error(`${e.stack}`);
+          console.error(`Unable to call observer callback`);
+          console.error(`${e.message}`);
+          console.error(`${e.stack}`);
         }
       }
     }
@@ -104,12 +82,8 @@ class Observable<T> implements IObservable<T> {
    * Clears the subscribers map and prevents further operations.
    * This prevents references to unused functions being kept around.
    */
-  public destroy() {
-    if (this.subscribers == null) {
-      throw new Error(`Observable already destroyed`);
-    }
+  public clearSubscribers() {
     this.subscribers.clear();
-    this.subscribers = null;
   }
 }
 
@@ -147,5 +121,10 @@ const createObservableResource = <T>(fields: {
   };
 };
 
-export { createObservableResource, createObservable, createLazyObsevable };
+export {
+  createObservableResource,
+  createObservable,
+  createLazyObsevable,
+  Observable,
+};
 export type { IObservableResource, ObserverID, IObservable };

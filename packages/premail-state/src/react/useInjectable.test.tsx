@@ -1,34 +1,35 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { act } from "react-dom/test-utils";
-import { createObservable } from "../state/Observable";
-import { createStoreId, Store } from "../state/Store";
+import { createDefinition } from "../index";
+import { Observable } from "../state/Observable";
+import { Store } from "../state/Store";
 import { StateContextProvider } from "./StateContextProvider";
 import { useObservable } from "./useObservable";
-import { useStore } from "./useStore";
+import { useInjectable } from "./useInjectable";
 
 class TestStore extends Store {
-  likes = createObservable(100);
-  constructor() {
-    super();
-    this.register(this.likes);
-  }
+  likes = new Observable(100);
+
+  cleanUp = () => {
+    this.likes.clearSubscribers();
+  };
 }
 
-const testStore = createStoreId({ class: TestStore });
+const testStore = createDefinition({ class: TestStore });
 
 const OBSERVABLE_DISPLAY_ID = "display-id";
 const OBSERVABLE_MUTATOR_ID = "mutatir-id";
 
 const ObservableDisplay = () => {
-  const store = useStore(testStore);
+  const store = useInjectable(testStore);
   const [value] = useObservable(store?.likes ?? null);
 
   return <div data-testid={OBSERVABLE_DISPLAY_ID}>{value}</div>;
 };
 
 const ObservableMutator = () => {
-  const store = useStore(testStore);
+  const store = useInjectable(testStore);
   const [value, setValue] = useObservable(store?.likes ?? null);
   const parsedValue = value ?? 0;
 
@@ -73,7 +74,7 @@ describe("useObservable tests", () => {
     }
     act(() => {
       root?.render(
-        <StateContextProvider stores={[testStore]}>
+        <StateContextProvider injectables={[testStore]}>
           <ObservableDisplay />
           <ObservableMutator />
         </StateContextProvider>

@@ -11,27 +11,12 @@ describe("Observer tests", () => {
     expect(caller).toHaveBeenCalledWith("new value");
   });
 
-  it("Should throw if the observer is updated after marked as destroyed", () => {
+  it("Should not invoke the callback function after clearcallback is called", () => {
     const caller = jest.fn();
     const { instance: observer } = createObserver<string>(caller);
-    observer.destroy();
+    observer.clearCallback();
 
-    const notifyDestroyedObserver = () => {
-      observer.update("new value");
-    };
-
-    expect(notifyDestroyedObserver).toThrow();
-  });
-  it("Should throw if the observer is destroyed more than once", () => {
-    const caller = jest.fn();
-
-    const { instance: observer } = createObserver<string>(caller);
-    observer.destroy();
-
-    const destroyDestroyedObserver = () => {
-      observer.destroy();
-    };
-
-    expect(destroyDestroyedObserver).toThrow();
+    observer.update("new value");
+    expect(caller).not.toHaveBeenCalled();
   });
 });
