@@ -199,6 +199,51 @@
       "name": "Redo",
       "path": "./premail-redo.svg",
       "info": "Redo icon for text editors."
+    },
+    {
+      "name": "Button",
+      "path": "./premail-button.svg",
+      "info": "Button icon for text editors."
+    },
+    {
+      "name": "Divider",
+      "path": "./premail-divider.svg",
+      "info": "Divider icon for text editors."
+    },
+    {
+      "name": "Header",
+      "path": "./premail-header.svg",
+      "info": "Header icon for text editors."
+    },
+    {
+      "name": "Menu",
+      "path": "./premail-menu.svg",
+      "info": "Menu icon, for websites represents a menu."
+    },
+    {
+      "name": "Picture",
+      "path": "./premail-picture.svg",
+      "info": "Picture icon, for text editors."
+    },
+    {
+      "name": "Social",
+      "path": "./premail-social.svg",
+      "info": "Social icon, represents sharing content in social media."
+    },
+    {
+      "name": "Spacer",
+      "path": "./premail-spacer.svg",
+      "info": "Spacer icon, for text editors."
+    },
+    {
+      "name": "Text",
+      "path": "./premail-text.svg",
+      "info": "Text icon, for text editors."
+    },
+    {
+      "name": "Video",
+      "path": "./premail-video.svg",
+      "info": "Video icon, reprenents video content."
     }
   ]
 }
