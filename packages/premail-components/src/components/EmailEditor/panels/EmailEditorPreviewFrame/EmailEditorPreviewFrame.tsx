@@ -49,7 +49,7 @@ const EmailPreviewFrame = (props: IEmailPreviewFrameProps) => {
       width={"100%"}
       height={"100%"}
       frameBorder={"none"}
-      style={{ border: "none" }}
+      style={{ border: "none", maxWidth: "100%" }}
       ref={setRef}
       id={props.id}
     >

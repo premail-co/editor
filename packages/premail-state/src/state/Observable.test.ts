@@ -48,15 +48,6 @@ describe("createObservable Tests", () => {
     expect(observable.instance.subscribe(observer)).toBe(false);
   });
 
-  it("Should throw when subscribe called after instance marked as destroyed", () => {
-    const { instance: observable } = createObservable(null);
-    observable.destroy();
-    const subscribeToDeadInstance = () => {
-      observable.subscribe(createObserver(jest.fn()));
-    };
-    expect(subscribeToDeadInstance).toThrow();
-  });
-
   it("Should return true when unsubscribe called with existing observer", () => {
     const spy = jest.fn();
     const observer = createObserver<null>(spy);
@@ -68,26 +59,6 @@ describe("createObservable Tests", () => {
   it("Should return false when unsubscribe called with unknown observer", () => {
     const { instance: observable } = createObservable(null);
     expect(observable.unsubscribe(Symbol())).toBe(false);
-  });
-
-  it("Should throw when unsubscribe called after instance marked as destroyed", () => {
-    const { instance: observable } = createObservable(null);
-    observable.destroy();
-    const unsubscribeToDeadInstance = () => {
-      observable.unsubscribe(Symbol());
-    };
-    expect(unsubscribeToDeadInstance).toThrow();
-  });
-
-  it("Should throw when unsubscribe called after instance marked as destroyed", () => {
-    const { instance: observable } = createObservable(null);
-    observable.destroy();
-
-    const unsubscribeToDeadInstance = () => {
-      observable.unsubscribe(Symbol());
-    };
-
-    expect(unsubscribeToDeadInstance).toThrow();
   });
 
   it("Should call all observers cb when notify is called", () => {
@@ -279,22 +250,16 @@ describe("createObservable Tests", () => {
     expect(observer3Spy).toHaveBeenCalledTimes(1);
   });
 
-  it("Should throw when notify called after instance marked as destroyed", () => {
-    const { instance: observable } = createObservable(null);
-    observable.destroy();
-    const notifyDeadInstance = () => {
-      observable.notify();
-    };
-    expect(notifyDeadInstance).toThrow();
-  });
+  it("Should not notify observers if clearSubscribers is called", () => {
+    const spy = jest.fn();
+    const observer = createObserver<number>(spy);
+    const observable = createObservable(0);
+    observable.instance.subscribe(observer);
+    observable.instance.clearSubscribers();
+    observable.instance.setValue(2);
+    observable.instance.notify();
 
-  it("Should throw when destroy is called more than once", () => {
-    const { instance: observable } = createObservable(null);
-    observable.destroy();
-    const destroyDeadInstance = () => {
-      observable.destroy();
-    };
-    expect(destroyDeadInstance).toThrow();
+    expect(spy).not.toHaveBeenCalled();
   });
 });
 

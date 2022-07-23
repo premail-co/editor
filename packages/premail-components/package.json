@@ -68,6 +68,7 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
-    "@premail/icons": "workspace:^"
+    "@premail/icons": "workspace:^",
+    "@premail/state": "workspace:^"
   }
 }

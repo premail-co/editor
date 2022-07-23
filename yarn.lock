@@ -2364,6 +2364,7 @@ __metadata:
     "@mdx-js/react": ^1.6.22
     "@premail/icons": "workspace:^"
     "@premail/logger": "workspace:^"
+    "@premail/state": "workspace:^"
     "@storybook/addon-actions": ^6.5.9
     "@storybook/addon-docs": ^6.5.9
     "@storybook/addon-essentials": ^6.5.9
@@ -2486,7 +2487,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@premail/state@workspace:packages/premail-state":
+"@premail/state@workspace:^, @premail/state@workspace:packages/premail-state":
   version: 0.0.0-use.local
   resolution: "@premail/state@workspace:packages/premail-state"
   dependencies:

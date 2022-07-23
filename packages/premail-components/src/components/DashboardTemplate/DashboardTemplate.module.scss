@@ -10,6 +10,7 @@
   background-color: var(--dashboard-template-header-background-color);
   display: flex;
   min-width: inherit;
+  overflow: hidden;
 }
 
 .body {
@@ -19,11 +20,14 @@
 }
 
 .previewArea {
-  width: 80%;
+  flex: 1;
+  max-width: 80vw;
   min-width: 500px;
+  overflow: hidden;
 }
 
 .toolbar {
-  width: 20%;
+  flex: 1;
+  max-width: 20vw;
   min-width: 300px;
 }

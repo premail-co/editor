@@ -34,7 +34,7 @@ describe("StateContext tests", () => {
   it("Match default values snapshot", () => {
     expect(defaultValues).toMatchInlineSnapshot(`
       Object {
-        "storeRegisty": null,
+        "instanceManager": null,
       }
     `);
   });

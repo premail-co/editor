@@ -1,0 +1,25 @@
+.root {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 10px 0px 10px 20px;
+  gap: 25px;
+  & button {
+    padding: 0;
+    &:hover {
+      background-color: transparent;
+    }
+  }
+
+  border-bottom: 1px solid var(--email-editor-toolbar-border-color);
+}
+.inactiveTab {
+  line-height: 16px;
+  color: var(--email-editor-toolbar-switcher-inactive-color);
+}
+
+.activeTab {
+  line-height: 16px;
+
+  color: var(--email-editor-toolbar-switcher-active-color);
+}

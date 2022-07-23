@@ -3,10 +3,7 @@ import { IObservable } from "../state/Observable";
 import { createObserver } from "../state/Observer";
 
 const useObservable = <T>(
-  observable: {
-    id: Symbol;
-    instance: IObservable<T>;
-  } | null
+  observable: IObservable<T> | null
 ): [T | null, (arg: T) => void] => {
   const [observableState, setObservableState] =
     React.useState<IObservable<T> | null>(null);
@@ -15,8 +12,8 @@ const useObservable = <T>(
   );
 
   React.useEffect(() => {
-    setObservableState(observable?.instance ?? null);
-    setObservableValue(observable?.instance?.getValue() ?? null);
+    setObservableState(observable ?? null);
+    setObservableValue(observable?.getValue() ?? null);
   }, [observable]);
 
   React.useEffect(() => {
@@ -30,7 +27,7 @@ const useObservable = <T>(
 
     return () => {
       observableState.unsubscribe(observer.id);
-      observer.instance.destroy();
+      observer.instance.clearCallback();
     };
   }, [observableState]);
 

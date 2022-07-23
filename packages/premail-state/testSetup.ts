@@ -11,6 +11,8 @@ jest.mock("@premail/logger", () => {
   };
 });
 
+console.error = () => {};
+
 // Enable ReactDOM act for unit testing
 globalThis.IS_REACT_ACT_ENVIRONMENT = true;
 

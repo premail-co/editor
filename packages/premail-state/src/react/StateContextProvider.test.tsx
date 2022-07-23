@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { act } from "react-dom/test-utils";
-import { createStoreId, Store } from "../state/Store";
+import { createDefinition } from "../index";
+import { Store } from "../state/Store";
 import { StateContextProvider } from "./StateContextProvider";
 
 describe("StateContextProvider tests", () => {
@@ -34,7 +35,7 @@ describe("StateContextProvider tests", () => {
 
     act(() => {
       root?.render(
-        <StateContextProvider stores={[]}>
+        <StateContextProvider injectables={[]}>
           <div data-testid={renderTestId}>{renderedText}</div>
         </StateContextProvider>
       );
@@ -50,21 +51,78 @@ describe("StateContextProvider tests", () => {
     if (!container || !root) fail();
     const spy = jest.fn();
     class TestStore extends Store {
-      constructor() {
-        super();
-        spy();
-      }
+      onInstanceCreated = spy;
     }
-    const storeid = createStoreId({ class: TestStore });
+
+    const storeDefinition = createDefinition({ class: TestStore });
 
     act(() => {
       root?.render(
-        <StateContextProvider stores={[storeid]}>
+        <StateContextProvider injectables={[storeDefinition]}>
           <div>hello</div>
         </StateContextProvider>
       );
     });
 
     expect(spy).toHaveBeenCalled();
+  });
+
+  it("Should swap stores", () => {
+    if (!container || !root) fail();
+    const spy1 = jest.fn();
+    const cleanUp = jest.fn();
+    const spy2 = jest.fn();
+    class TestStore1 extends Store {
+      onInstanceCreated = spy1;
+      cleanUp = cleanUp;
+    }
+    class TestStore2 extends Store {
+      onInstanceCreated = spy2;
+    }
+
+    const storeDefinition1 = createDefinition({
+      class: TestStore1,
+      name: "TestStore1",
+    });
+    const storeDefinition2 = createDefinition({
+      class: TestStore2,
+      name: "TestStore2",
+    });
+
+    const App = () => {
+      const [injectables, setInjectables] = React.useState<any[]>([
+        storeDefinition1,
+      ]);
+      return (
+        <StateContextProvider injectables={injectables}>
+          <button
+            data-testid="inject-button"
+            onClick={() => {
+              setInjectables([storeDefinition2]);
+            }}
+          >
+            add stores
+          </button>
+        </StateContextProvider>
+      );
+    };
+
+    act(() => {
+      root?.render(<App />);
+    });
+    expect(spy1).toHaveBeenCalled();
+
+    const el = container.querySelector<HTMLButtonElement>(
+      `[data-testid="inject-button"]`
+    );
+    if (!el) {
+      fail();
+    }
+    act(() => {
+      el.click();
+    });
+
+    expect(cleanUp).toHaveBeenCalled();
+    expect(spy2).toHaveBeenCalled();
   });
 });

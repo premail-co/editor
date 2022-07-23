@@ -1,7 +1,7 @@
-import { IStoreRegsitry } from "../../state/StoreRegistry";
+import { IInstanceManager, Class, IInjectable } from "../../index";
 
 interface IStateContext {
-  storeRegisty: IStoreRegsitry | null;
+  instanceManager: IInstanceManager<Class<IInjectable>> | null;
 }
 
 export type { IStateContext };
