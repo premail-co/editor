@@ -3,10 +3,3 @@
 :global(.day) {
   @include day-theme;
 }
-
-svg {
-  vertical-align: middle;
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-}

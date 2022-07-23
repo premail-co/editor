@@ -7,7 +7,7 @@ enum ToolbarTab {
 }
 
 class ToolBarStore extends Store {
-  activeTab = new Observable(ToolbarTab.CONTENT);
+  activeTab = new Observable<ToolbarTab>(ToolbarTab.CONTENT);
 
   cleanUp = () => {
     this.activeTab.clearSubscribers();
