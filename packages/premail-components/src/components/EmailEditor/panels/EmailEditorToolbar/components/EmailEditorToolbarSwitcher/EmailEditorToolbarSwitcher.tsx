@@ -5,7 +5,6 @@ import { useActiveTab } from "../../hooks/useActiveTab";
 import styles from "./EmailEditorToolbarSwitcher.module.scss";
 const EmailEditorToolbarSwitcher = () => {
   const { activeTab, setActiveTab } = useActiveTab();
-  console.log(":activeTab", activeTab);
   const setContentActive = React.useCallback(() => {
     setActiveTab(ToolbarTab.CONTENT);
   }, [setActiveTab]);
