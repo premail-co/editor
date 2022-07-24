@@ -57,9 +57,13 @@
   --email-editor-toolbar-switcher-active-color: var(--premail-black);
   --email-editor-toolbar-switcher-inactive-color: var(--premail-gray-3);
   --email-editor-toolbar-border-color: var(--premail-gray-1);
-  --email-editor-content-block-tab-background-color: var(--premail-white);
-  --email-editor-content-block-tab-text-color: var(--premail-black);
-  --email-editor-content-block-tab-item-color: var(--premail-gray-6);
+  --email-editor-toolbar-tab-wrapper-background-color: var(--premail-white);
+  --email-editor-toolbar-tab-title-color: var(--premail-black);
+  --email-editor-content-toolbar-block-tab-item-color: var(--premail-gray-6);
+  --email-editor-toolbar-layout-block-item-background-color: var(
+    --premail-gray-0
+  );
+  --email-editor-toolbar-layout-block-item-border-color: var(--premail-gray-3);
 
   /* Dashboard Template */
   --dashboard-template-header-height: 60px;

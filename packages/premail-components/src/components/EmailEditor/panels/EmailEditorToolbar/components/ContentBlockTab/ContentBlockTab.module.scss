@@ -1,39 +1,3 @@
-.root {
-  /* Auto layout */
-
-  /* Frame 188 */
-
-  /* Auto layout */
-
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 10px 20px;
-  gap: 10px;
-
-  /* premail-white */
-
-  background: var(--email-editor-content-block-tab-background-color);
-}
-.title {
-  font-family: "Open Sans";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 22px;
-  /* identical to box height, or 183% */
-
-  /* premail-black */
-
-  color: var(--email-editor-content-block-tab-text-color);
-
-  /* Inside auto layout */
-
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-}
-
 .row {
   display: flex;
   flex-direction: row;
@@ -41,6 +5,7 @@
   padding: 0px;
   gap: 15px;
 }
+
 .item {
   box-sizing: border-box;
 
@@ -58,7 +23,7 @@
 
   /* premail-white */
 
-  color: var(--email-editor-content-block-tab-item-color);
+  color: var(--email-editor-content-toolbar-block-tab-item-color);
 
   /* Inside auto layout */
 
@@ -87,6 +52,7 @@
   order: 1;
   flex-grow: 0;
 }
+
 .itemIcon {
   width: 32px;
   height: 32px;
