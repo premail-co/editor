@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./EmailEditorContentBlockTab.module.scss";
+import styles from "./ContentBlockTab.module.scss";
 import {
   Header,
   Text,
@@ -12,8 +12,10 @@ import {
   Video,
   Chevron,
 } from "@premail/icons";
-import { Surface } from "../../../../../Surface";
+import { Surface } from "../../../../../Surface/index";
 import { Typography } from "../../../../../Typography/Typography";
+import { TabWrapper } from "../TabWrapper/index";
+import { TabTitleText } from "../TabTitleText/index";
 
 const Row = (props: React.PropsWithChildren<{}>) => {
   return <div className={styles.row}>{props.children}</div>;
@@ -27,12 +29,10 @@ const Item = (props: React.PropsWithChildren<{}>) => {
   );
 };
 
-const EmailEditorContentBlockTab = () => {
+const ContentBlockTab = () => {
   return (
-    <div className={styles.root}>
-      <Typography variant="p3" bold disableMargins override={styles.title}>
-        Blocks
-      </Typography>
+    <TabWrapper>
+      <TabTitleText>Blocks</TabTitleText>
       <Row>
         <Item>
           <Header className={styles.itemIcon} />
@@ -152,8 +152,8 @@ const EmailEditorContentBlockTab = () => {
           </Typography>
         </Item>
       </Row>
-    </div>
+    </TabWrapper>
   );
 };
 
-export { EmailEditorContentBlockTab };
+export { ContentBlockTab };

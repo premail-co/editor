@@ -1,7 +1,8 @@
 import React from "react";
 import { Surface } from "../../../Surface/Surface";
 import { ToolbarTab } from "../../stores/ToolbarStore/ToolbarStore";
-import { EmailEditorContentBlockTab } from "./components/EmailEditorContentBlockTab/EmailEditorContentBlockTab";
+import { ContentBlockTab } from "./components/ContentBlockTab/ContentBlockTab";
+import { LayoutBlockTab } from "./components/LayoutBlockTab/LayoutBlockTab";
 import { EmailEditorToolbarSwitcher } from "./components/EmailEditorToolbarSwitcher/EmailEditorToolbarSwitcher";
 import styles from "./EmailEditorToolbar.module.scss";
 import { useActiveTab } from "./hooks/useActiveTab";
@@ -24,7 +25,8 @@ const EmailEditorToolbar = (_props: IEmailEditorToolbarProps) => {
       override={styles.root}
     >
       <EmailEditorToolbarSwitcher />
-      {activeTab == ToolbarTab.CONTENT ? <EmailEditorContentBlockTab /> : ""}
+      {activeTab == ToolbarTab.CONTENT ? <ContentBlockTab /> : ""}
+      {activeTab == ToolbarTab.LAYOUT ? <LayoutBlockTab /> : ""}
     </Surface>
   );
 };

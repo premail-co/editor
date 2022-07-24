@@ -1,0 +1,18 @@
+.title {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 22px;
+  /* identical to box height, or 183% */
+
+  /* premail-black */
+
+  color: var(--email-editor-toolbar-tab-title-color);
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
