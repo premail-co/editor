@@ -1,0 +1,27 @@
+.root {
+  position: relative;
+}
+.inputOverride {
+  & input {
+    user-select: none !important;
+  }
+}
+
+.picker {
+  position: absolute;
+  z-index: 2;
+  border: 1px solid var(--premail-gray-1) !important;
+}
+.hiddenPicker {
+  display: none;
+}
+
+.previewArea {
+  width: 32px;
+  height: 24px;
+  border: 1px solid #9ea19c;
+}
+
+.colorPicker {
+  box-shadow: none !important;
+}

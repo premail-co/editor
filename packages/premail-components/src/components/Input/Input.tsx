@@ -10,7 +10,8 @@ type InputSupportedType =
   | "email"
   | "date"
   | "tel"
-  | "password";
+  | "password"
+  | "color";
 
 interface IInputProps extends IOverridable, React.HTMLProps<HTMLInputElement> {
   readonly type?: InputSupportedType;

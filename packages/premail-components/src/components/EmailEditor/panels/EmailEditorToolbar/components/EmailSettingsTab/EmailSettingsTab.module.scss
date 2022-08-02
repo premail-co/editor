@@ -1,0 +1,51 @@
+.languageSelector {
+  width: 300px;
+
+  & input {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 22px;
+    /* identical to box height, or 183% */
+
+    /* premail-gray-6 */
+
+    color: #525451;
+  }
+
+  & li {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 22px;
+    /* identical to box height, or 183% */
+
+    /* premail-gray-6 */
+
+    color: var(--premail-gray-5);
+  }
+}
+
+.picker {
+  top: 0;
+  left: 0;
+  transform: translateX(calc(-100% - 20px));
+}
+.colorInputOverride {
+  width: 300px;
+  margin-bottom: 10px;
+  & input {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 22px;
+    /* identical to box height, or 183% */
+
+    /* premail-gray-6 */
+
+    color: #525451;
+  }
+}
