@@ -1,6 +1,6 @@
 import React from "react";
 import { TabTitleText } from "../TabTitleText/index";
-import { TabWrapper } from "../TabWrapper/index";
+import { TabGroupWrapper } from "../TabGroupWrapper/index";
 import styles from "./LayoutBlockTab.module.scss";
 
 const Row = (props: React.PropsWithChildren<{}>) => {
@@ -23,7 +23,7 @@ const VisibleCol = (
 
 const LayoutBlockTab = () => {
   return (
-    <TabWrapper>
+    <TabGroupWrapper>
       <TabTitleText>Blocks</TabTitleText>
 
       <Row>
@@ -68,7 +68,7 @@ const LayoutBlockTab = () => {
         <VisibleCol colWidth="visibleColQuarter" />
         <VisibleCol colWidth="visibleColQuarter" />
       </Row>
-    </TabWrapper>
+    </TabGroupWrapper>
   );
 };
 export { LayoutBlockTab };

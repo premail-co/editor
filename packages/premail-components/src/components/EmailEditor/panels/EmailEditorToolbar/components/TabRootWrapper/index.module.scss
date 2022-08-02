@@ -1,0 +1,5 @@
+.root {
+  & > :not(:last-child) {
+    border-bottom: 1px solid var(--email-editor-toolbar-section-border-color);
+  }
+}

@@ -3,6 +3,7 @@ import { Input } from "./Input";
 import { Surface } from "../Surface/index";
 import { Typography } from "../Typography";
 import { Chevron } from "@premail/icons";
+import { ColorInput } from "./ColorInput";
 
 export default {
   title: "Input",
@@ -63,6 +64,8 @@ const Template = () => {
         icon={Chevron}
         iconPosition="end"
       />
+      <Typography variant={"h6"}>Color Input</Typography>
+      <ColorInput id={"color-input"} color="#F3F3F3" />
     </Surface>
   );
 };

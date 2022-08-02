@@ -185,18 +185,4 @@ describe("Input Test", () => {
     expect(label.children[0].id).not.toBe("icon");
     expect(label.children[1].id).toBe("icon");
   });
-
-  // it("Should render disabled styles", () => {
-  //   if (!root || !container) fail();
-
-  //   const Root = () => {
-  //     return <Input type="text" id="test-input" override={"override"} />;
-  //   };
-  //   act(() => {
-  //     root?.render(<Root />);
-  //   });
-  //   const label = container.querySelector("label");
-  //   if (!label) fail();
-  //   expect(Array.from(label.classList)).toContain("override");
-  // });
 });

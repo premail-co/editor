@@ -6,6 +6,7 @@ import { LayoutBlockTab } from "./components/LayoutBlockTab/LayoutBlockTab";
 import { EmailEditorToolbarSwitcher } from "./components/EmailEditorToolbarSwitcher/EmailEditorToolbarSwitcher";
 import styles from "./EmailEditorToolbar.module.scss";
 import { useActiveTab } from "./hooks/useActiveTab";
+import { EmailSettingsTab } from "./components/EmailSettingsTab/EmailSettingsTab";
 
 interface IEmailEditorToolbarProps {}
 
@@ -27,6 +28,7 @@ const EmailEditorToolbar = (_props: IEmailEditorToolbarProps) => {
       <EmailEditorToolbarSwitcher />
       {activeTab == ToolbarTab.CONTENT ? <ContentBlockTab /> : ""}
       {activeTab == ToolbarTab.LAYOUT ? <LayoutBlockTab /> : ""}
+      {activeTab == ToolbarTab.EMAIL_SETINGS ? <EmailSettingsTab /> : ""}
     </Surface>
   );
 };

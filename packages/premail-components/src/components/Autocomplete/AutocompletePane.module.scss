@@ -1,0 +1,29 @@
+.root {
+  margin: 0px;
+  padding: 0px;
+}
+
+.listElement {
+  list-style-type: none;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-family: var(--autocomplete-pane-font-family);
+  font-weight: var(--autocomplete-pane-font-weight);
+  background-color: var(--autocomplete-pane-background-color);
+  color: var(--autocomplete-pane-color);
+  cursor: pointer;
+}
+
+.noMatch {
+  cursor: not-allowed;
+  font-weight: var(--autocomplete-pane-font-weight-no-match);
+  font-style: italic;
+}
+.listElementFocused {
+  background-color: var(--autocomplete-pane-background-color-highlight);
+}
+.listElementWrapper {
+  margin: 0px 5px 0px 5px;
+}

@@ -1,0 +1,61 @@
+.inputOverride {
+  position: relative;
+  // selector helps removehover state from  pane this way it doesn't interfere with animations
+  & + .paneExpanded li:hover {
+    background-color: var(--autocomplete-pane-background-color-highlight);
+  }
+}
+
+.root:hover {
+  cursor: pointer;
+}
+.root {
+  position: relative;
+}
+.paneContainerShifted {
+  transform: translateY(-20px);
+}
+
+.paneContainer {
+  margin-top: var(--input-box-shadow-width);
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+  overflow: scroll;
+  overflow-x: hidden;
+  padding: 0px;
+  box-sizing: border-box;
+  border-radius: 0px 0px 4px 4px;
+  max-height: 0px;
+  border-width: 0px;
+  transition: max-height 0ms ease-in-out;
+  // transition-delay: 100ms;
+  will-change: max-height;
+  // display: none;
+}
+
+@keyframes growDown {
+  0% {
+    max-height: 0px;
+  }
+
+  100% {
+    max-height: 200px;
+  }
+}
+
+@keyframes growUp {
+  0% {
+    max-height: 200px;
+  }
+
+  100% {
+    max-height: 0px;
+  }
+}
+
+.paneExpanded {
+  // border-width: 0px 1px 1px 1px;
+  // animation: growDown 300ms ease-in-out forwards;
+  max-height: 200px;
+}
