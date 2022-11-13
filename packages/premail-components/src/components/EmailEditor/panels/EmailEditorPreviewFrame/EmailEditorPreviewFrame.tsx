@@ -58,5 +58,5 @@ const EmailPreviewFrame = (props: IEmailPreviewFrameProps) => {
   );
 };
 
-export { EmailPreviewFrame };
+export { EmailPreviewFrame, useIFrameRef };
 export type { IEmailPreviewFrameProps };

@@ -30,6 +30,7 @@
     "@types/react-color": "^3.0.6",
     "@types/react-dom": "18.0.6",
     "@types/react-test-renderer": "^18.0.0",
+    "@types/shortid": "^0.0.29",
     "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
     "css-modules-typescript-loader": "^4.0.1",
@@ -69,8 +70,12 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@craftjs/core": "^0.2.0-beta.6",
     "@premail/icons": "workspace:^",
     "@premail/state": "workspace:^",
-    "react-color": "^2.19.3"
+    "react-color": "^2.19.3",
+    "shortid": "^2.2.16",
+    "slate": "^0.82.0",
+    "slate-react": "^0.82.0"
   }
 }

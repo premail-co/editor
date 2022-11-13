@@ -7,11 +7,15 @@ import { EmailEditorToolbarSwitcher } from "./components/EmailEditorToolbarSwitc
 import styles from "./EmailEditorToolbar.module.scss";
 import { useActiveTab } from "./hooks/useActiveTab";
 import { EmailSettingsTab } from "./components/EmailSettingsTab/EmailSettingsTab";
+import { AttributeEditingTab } from "./components/AttributeEditingTab/AttributeEditingTab";
+import { useEditor } from "@craftjs/core";
 
 interface IEmailEditorToolbarProps {}
 
 const EmailEditorToolbar = (_props: IEmailEditorToolbarProps) => {
   const { activeTab } = useActiveTab();
+  const editor = useEditor();
+
   if (activeTab == null) {
     return null;
   }
@@ -29,6 +33,7 @@ const EmailEditorToolbar = (_props: IEmailEditorToolbarProps) => {
       {activeTab == ToolbarTab.CONTENT ? <ContentBlockTab /> : ""}
       {activeTab == ToolbarTab.LAYOUT ? <LayoutBlockTab /> : ""}
       {activeTab == ToolbarTab.EMAIL_SETINGS ? <EmailSettingsTab /> : ""}
+      {activeTab == ToolbarTab.ATTRIBUTE_EDITOR ? <AttributeEditingTab /> : ""}
     </Surface>
   );
 };

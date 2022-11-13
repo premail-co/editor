@@ -17,6 +17,8 @@ import { Typography } from "../../../../../Typography/Typography";
 import { TabGroupWrapper } from "../TabGroupWrapper";
 import { TabTitleText } from "../TabTitleText/index";
 import { TabRootWrapper } from "../TabRootWrapper";
+import { InsertHeaderBlockButton } from "./components/InsertHeaderDraggable/index";
+import { InsertTextDraggable } from "./components/InsertTextDraggable/index";
 
 const Row = (props: React.PropsWithChildren<{}>) => {
   return <div className={styles.row}>{props.children}</div>;
@@ -36,28 +38,8 @@ const ContentBlockTab = () => {
       <TabGroupWrapper>
         <TabTitleText>Blocks</TabTitleText>
         <Row>
-          <Item>
-            <Header className={styles.itemIcon} />
-            <Typography
-              variant={"p2"}
-              renderElement="span"
-              override={styles.itemText}
-              disableMargins
-            >
-              Header
-            </Typography>
-          </Item>
-          <Item>
-            <Text className={styles.itemIcon} />
-            <Typography
-              variant={"p2"}
-              renderElement="span"
-              override={styles.itemText}
-              disableMargins
-            >
-              Text
-            </Typography>
-          </Item>
+          <InsertHeaderBlockButton />
+          <InsertTextDraggable />
           <Item>
             <Picture className={styles.itemIcon} />
             <Typography

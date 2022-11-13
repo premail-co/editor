@@ -130,7 +130,6 @@ const css = `
     margin: 0 auto;
     margin: 0 auto;
     padding-left: 16px;
-    padding-bottom: 16px;
   }
   td.columns .column,
   td.columns .columns,
@@ -1442,15 +1441,11 @@ const css = `
       -moz-box-sizing: border-box;
       -webkit-box-sizing: border-box;
       box-sizing: border-box;
-      padding-left: 16px !important;
-      padding-right: 16px !important;
     }
     table.body .columns .column,
     table.body .columns .columns,
     table.body .column .column,
     table.body .column .columns {
-      padding-left: 0 !important;
-      padding-right: 0 !important;
     }
     table.body .collapse .columns,
     table.body .collapse .column {

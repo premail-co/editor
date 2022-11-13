@@ -374,9 +374,7 @@ describe("AutocompleteStory Test", () => {
 
     act(() => {
       Simulate.focus(el);
-
       el.value = "hello";
-
       Simulate.change(el);
     });
 

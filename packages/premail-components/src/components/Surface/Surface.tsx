@@ -22,6 +22,8 @@ interface BorderConfig {
   disableBorderBlockEnd?: boolean;
 }
 
+type SurfaceRefType = HTMLDivElement;
+
 interface ISurfaceProps
   extends IOverridable,
     IStylable,
@@ -84,7 +86,7 @@ const getBorderStyleFromProps = (border?: boolean | BorderConfig) => {
 };
 
 const Surface = React.forwardRef<
-  HTMLDivElement,
+  SurfaceRefType,
   React.PropsWithChildren<ISurfaceProps>
 >((props, ref) => {
   const elevationClassName = React.useMemo(
@@ -114,4 +116,4 @@ const Surface = React.forwardRef<
   );
 });
 export { Surface };
-export type { ISurfaceProps };
+export type { ISurfaceProps, SurfaceRefType };

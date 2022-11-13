@@ -1,0 +1,57 @@
+.item {
+  box-sizing: border-box;
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 38px;
+  gap: 5px;
+
+  width: 120px;
+  height: 100px;
+
+  /* premail-white */
+
+  color: var(--email-editor-content-toolbar-block-tab-item-color);
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  user-select: none;
+  cursor: grab;
+}
+.itemIcon {
+  width: 32px;
+  height: 32px;
+
+  /* Inside auto layout */
+  color: inherit;
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.itemText {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 22px;
+  /* identical to box height, or 157% */
+
+  /* premail-gray-6 */
+
+  color: inherit;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}

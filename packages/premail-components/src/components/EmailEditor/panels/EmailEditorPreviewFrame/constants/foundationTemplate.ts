@@ -15,7 +15,7 @@ const template = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http
 
   <body id="${contentNodeId}">
     <div lang="en" style="display:none;" id="${preheaderTextNodeId}"></div>
-  
+    
   </body>
 </html>
 `;
