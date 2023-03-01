@@ -14,6 +14,14 @@ mermaid vscode extension
 
 # Design Mockups
 
+## Main views
+
 ![wireframe](./design/Dashboard-content.png)
 ![wireframe](./design/Dashboard-layout.png)
 ![wireframe](./design/Dashboard-email-settings.png)
+
+## Settings views
+
+### Layout block settings view
+
+![wireframe](./design/Layout%20Block%20Settings.png)
