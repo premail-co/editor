@@ -24,4 +24,4 @@ mermaid vscode extension
 
 ### Layout block settings view
 
-![wireframe](./design/Layout%20Block%20Settings.png)
+![wireframe](./design/Layout-Block-Settings.png)
